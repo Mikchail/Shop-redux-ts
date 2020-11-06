@@ -1,0 +1,60 @@
+  $arrow-light: 21px 204px -21px -204px 7px 11px 232px 224px 'sprite.png';
+  $arrow-light_hover: 32px 204px -32px -204px 7px 11px 232px 224px 'sprite.png';
+  $arrow: 30px 189px -30px -189px 27px 9px 232px 224px 'sprite.png';
+  $cart: 0px 0px 0px 0px 81px 71px 232px 224px 'sprite.png';
+  $cart_thumb: 203px 132px -203px -132px 20px 20px 232px 224px 'sprite.png';
+  $check: 85px 0px -85px 0px 70px 70px 232px 224px 'sprite.png';
+  $contacts-four: 164px 119px -164px -119px 30px 23px 232px 224px 'sprite.png';
+  $contacts-one: 132px 75px -132px -75px 19px 30px 232px 224px 'sprite.png';
+  $contacts-three: 159px 84px -159px -84px 30px 30px 232px 224px 'sprite.png';
+  $contacts-two: 132px 119px -132px -119px 28px 30px 232px 224px 'sprite.png';
+  $error: 203px 160px -203px -160px 20px 17px 232px 224px 'sprite.png';
+  $icon-1: 203px 88px -203px -88px 26px 40px 232px 224px 'sprite.png';
+  $icon-1_hover: 0px 160px 0px -160px 26px 40px 232px 224px 'sprite.png';
+  $icon-2: 44px 119px -44px -119px 40px 34px 232px 224px 'sprite.png';
+  $icon-2_hover: 88px 119px -88px -119px 40px 34px 232px 224px 'sprite.png';
+  $icon-3: 0px 75px 0px -75px 40px 40px 232px 224px 'sprite.png';
+  $icon-3_hover: 44px 75px -44px -75px 40px 40px 232px 224px 'sprite.png';
+  $icon-4: 203px 0px -203px 0px 29px 40px 232px 224px 'sprite.png';
+  $icon-4_hover: 203px 44px -203px -44px 29px 40px 232px 224px 'sprite.png';
+  $icon-5: 159px 43px -159px -43px 40px 37px 232px 224px 'sprite.png';
+  $icon-5_hover: 0px 119px 0px -119px 40px 37px 232px 224px 'sprite.png';
+  $icon-6: 88px 75px -88px -75px 40px 39px 232px 224px 'sprite.png';
+  $icon-6_hover: 159px 0px -159px 0px 40px 39px 232px 224px 'sprite.png';
+  $info: 59px 160px -59px -160px 20px 20px 232px 224px 'sprite.png';
+  $location: 0px 204px 0px -204px 17px 20px 232px 224px 'sprite.png';
+  $logo: 30px 160px -30px -160px 25px 25px 232px 224px 'sprite.png';
+  $phone: 83px 160px -83px -160px 20px 20px 232px 224px 'sprite.png';
+  $print: 107px 160px -107px -160px 20px 20px 232px 224px 'sprite.png';
+  $product-cart-orange: 131px 160px -131px -160px 20px 20px 232px 224px 'sprite.png';
+  $product-cart: 155px 160px -155px -160px 20px 20px 232px 224px 'sprite.png';
+  $time: 179px 160px -179px -160px 20px 20px 232px 224px 'sprite.png';
+
+  @mixin sprite-position($sprite) {
+    $sprite-offset-x: nth($sprite, 3);
+    $sprite-offset-y: nth($sprite, 4);
+    background-position: $sprite-offset-x  $sprite-offset-y;
+  }
+
+  @mixin sprite-image($sprite) {
+    $sprite-image: nth($sprite, 9);
+    background-image: url(%=static=%png-sprite/96dpi/#{$sprite-image});
+  }
+
+  @mixin sprite-mixin-template($sprite) {
+    @include sprite-image($sprite);
+    @include sprite-position($sprite);
+    width: nth($sprite, 5);
+    height: nth($sprite, 6);
+  }
+
+  @mixin bg($sprite, $repeat: no-repeat) {
+    @include sprite-mixin-template($sprite);
+    $sprite-total-width: nth($sprite, 7);
+    $sprite-total-height: nth($sprite, 8);
+    background-size: $sprite-total-width, $sprite-total-height;
+    background-repeat: $repeat;
+
+
+
+  }

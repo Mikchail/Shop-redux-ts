@@ -1,0 +1,15 @@
+.map-box {
+    width: 100%;
+    height: 400px;
+    @include media_interval($media768, 0) {
+        height: 600px;
+    }
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    @include media_interval($media768, 0) {
+        height: 600px;
+    }
+}

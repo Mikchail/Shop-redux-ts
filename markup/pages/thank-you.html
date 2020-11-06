@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+
+<head>
+    {{> head/head head.defaults}}
+</head>
+
+<body class="page">
+%=symbols=%
+
+{{> header/header}}
+{{> breadcrumbs/breadcrumbs}}
+{{> page-title/thank-you}}
+<div class="page-content">
+    {{> thank-you/thank-you}}
+</div>
+
+<footer class="main-footer">
+    {{> footer/footer}}
+</footer>
+
+<script src="%=static=%js/separate-js/svg4everybody.min.js"></script>
+<script>svg4everybody();</script>
+
+<!-- Main scripts. You can replace it, but I recommend you to leave it here     -->
+<script src="%=static=%js/main%=hash=%%=min=%.js"></script>
+
+<div style="display: none" id="cart-popup" class="popup cart-popup">
+    <div class="popup__content">
+        <div class="popup__thumb cart-thumb"></div>
+        <div class="popup__text">The selectes products is added to your cart.
+            There are <strong>45 products</strong> in your cart.
+        </div>
+        <div class="popup__footer">
+            <a href="#" class="btn btn_no-bg">CONTINUE SHOPPING</a>
+            <a href="#" class="btn checkout-btn">CHECKOUT</a>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

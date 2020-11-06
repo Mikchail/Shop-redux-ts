@@ -1,0 +1,92 @@
+.partners {
+    padding: 25px 0 5px;
+    background-color: #f5f5f5;
+    @include media_interval($media768, $media1024) {
+        padding: 65px;
+    }
+    @include media_interval($media1024, 0) {
+        padding: 68px 0 65px;
+
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        @include media_interval(0, $media768) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__content {
+        flex-shrink: 0;
+        width: 210px;
+        @include media_interval(0, $media768) {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__title {
+        padding: 0;
+
+        &:before {
+            display: none;
+        }
+    }
+
+    &__all {
+        display: inline-block;
+        border-bottom: 2px solid $orange;
+        font-family: $rb;
+        text-transform: uppercase;
+        @include font-size(14px, 20px);
+        @include letter-spacing(100, 14px);
+        color: $title-color;
+        transition: color $animation-speed;
+        @include media_interval($media768, 0) {
+            margin-top: 10px;
+        }
+        @include media_interval($media1024, 0) {
+            &:hover {
+                color: $orange;
+            }
+        }
+    }
+
+    &__slider {
+        @include media_interval(0, $media768) {
+            padding-bottom: 58px;
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            @include media_interval(0, $media768) {
+                justify-content: center;
+            }
+
+            > * {
+                filter: grayscale(100%);
+                transition: filter $animation-speed;
+                @include media_interval($media1024, 0) {
+                    &:hover {
+                        filter: grayscale(0%);
+                    }
+                }
+            }
+        }
+    }
+
+    @include media_interval($media768, 0) {
+        .swiper-pagination {
+            display: none;
+        }
+    }
+
+    .swiper-slide {
+        height: auto;
+    }
+}

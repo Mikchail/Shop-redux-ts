@@ -1,0 +1,142 @@
+.page-title {
+    padding: 60px 0 40px;
+    background-color: $white;
+    @include media_interval($media768, 0) {
+        padding: 60px 0;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        @include media_interval($media768, 0) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .btn {
+            min-width: 220px;
+            margin-top: 20px;
+            @include media_interval($media768, 0) {
+                min-width: auto;
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__text {
+        position: relative;
+        padding-top: 20px;
+        font-family: $rb;
+        text-align: center;
+        @include font-size(24px, 28px);
+        color: $title-color;
+        @include media_interval($media768, 0) {
+            padding-top: 0;
+            padding-left: 24px;
+            text-align: left;
+            @include font-size(36px, 28px)
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 5px;
+            background-color: $orange;
+            @include media_interval($media768, 0) {
+                left: 0;
+                transform: none;
+                width: 5px;
+                height: 30px;
+            }
+        }
+    }
+}
+
+.product-hero {
+    padding: 55px 0 60px;
+    background-color: $white;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        text-align: center;
+        @include media_interval($media768, 0) {
+            text-align: left;
+        }
+        @include media_interval($media1024, 0) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__thumb {
+        flex-shrink: 0;
+        width: 100%;
+        @include media_interval($media768, $media1024) {
+            width: 30%;
+        }
+        @include media_interval($media1024, 0) {
+            width: 23%;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        width: 100%;
+        margin-top: 50px;
+        font-family: $rb;
+        @include font-size(24px, 30px);
+        text-transform: uppercase;
+        color: $title-color;
+        @include media_interval($media768, 0) {
+            width: 70%;
+            margin-top: 0;
+            padding: 0 40px;
+            @include font-size(36px, 43px);
+        }
+        @include media_interval($media1024, 0) {
+            flex-grow: 1;
+            width: auto;
+        }
+    }
+
+    &__btn {
+        flex-shrink: 0;
+        width: 100%;
+        margin-top: 30px;
+        text-align: center;
+        @include media_interval($media768, $media1024) {
+            margin-top: 40px;
+        }
+        @include media_interval($media1024, 0) {
+            width: auto;
+            margin-top: 0;
+            text-align: left;
+        }
+    }
+
+    .btn {
+        position: relative;
+
+        &:before {
+            content: '';
+            width: 0;
+            height: 0;
+            margin-right: 10px;
+            border-top: 5px solid transparent;
+            border-right: 9px solid $orange;
+            border-bottom: 5px solid transparent;
+            transition: border-color $animation-speed;
+        }
+    }
+}

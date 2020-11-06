@@ -1,0 +1,496 @@
+.contacts {
+    padding: 40px 0 0;
+    border-top: 1px solid #dddddd;
+    @include media_interval($media768, 0) {
+        padding: 60px 0 37px;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        width: 100%;
+        margin-bottom: 30px;
+        @include media_interval($media640, 0) {
+            width: 50%;
+            padding-right: 20px;
+        }
+        @include media_interval($media1024, 0) {
+            width: 26%;
+        }
+
+        &:last-child {
+            width: auto;
+            flex-grow: 1;
+        }
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font-family: $rb;
+        @include font-size(14px, 18px);
+        color: $title-color;
+    }
+
+    &__thumb {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 20px;
+        border-radius: 50%;
+        border: 2px solid $blue;
+        @include media_interval($media768, 0) {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 35px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &.contacts__thumb-1 {
+            &:before {
+                left: 55%;
+                @include bg($contacts-one);
+            }
+        }
+
+        &.contacts__thumb-2 {
+            &:before {
+                @include bg($contacts-two);
+            }
+        }
+
+        &.contacts__thumb-3 {
+            &:before {
+                @include bg($contacts-three);
+            }
+        }
+
+        &.contacts__thumb-4 {
+            &:before {
+                @include bg($contacts-four);
+            }
+        }
+    }
+
+    &__text {
+        margin-top: 5px;
+        @include font-size(14px, 30px);
+        @include media_interval($media768, 0) {
+            margin-top: 18px;
+        }
+
+        > span {
+            display: inline-block;
+        }
+    }
+
+    a {
+        color: inherit;
+        transition: color $animation-speed;
+        @include media_interval($media1024, 0) {
+            &:hover {
+                color: $orange;
+            }
+        }
+
+        &.contacts__mail {
+            color: $orange;
+            @include media_interval($media1024, 0) {
+                &:hover {
+                    color: $blue;
+                }
+            }
+        }
+    }
+}
+
+.contacts-form {
+    margin: 60px 0;
+}
+
+.form {
+    width: 100%;
+
+    &__inner {
+        padding: 30px 20px 10px 20px;
+        background-color: $white;
+        @include media_interval($media768, 0) {
+            padding: 56px 50px 10px 50px;
+        }
+        @include media_interval($media1024, 0) {
+            padding: 56px 100px 10px 100px;
+        }
+    }
+
+    &__title {
+        position: relative;
+        margin-bottom: 36px;
+        padding-top: 44px;
+        font-family: $rb;
+        text-align: center;
+        @include font-size(18px, 26px);
+        color: $title-color;
+        @include media_interval($media768, 0) {
+            margin-bottom: 50px;
+            margin-left: 30px;
+            padding-top: 0;
+            text-align: left;
+            @include font-size(24px, 30px);
+        }
+        @include media_interval($media1024, 0) {
+            margin-left: 0;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 25px;
+            width: 30px;
+            height: 5px;
+            transform: translateX(-50%);
+            background-color: $orange;
+            @include media_interval($media768, 0) {
+                left: -30px;
+                top: 0;
+                width: 5px;
+                height: 30px;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__column {
+        width: 100%;
+        margin-bottom: 20px;
+        @include media_interval($media640, 0) {
+            width: 48.5%;
+            margin-bottom: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    input, textarea {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 9px 10px;
+        border: 1px solid #dddddd;
+        @include font-size(14px, 20px);
+        color: #80909c;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.error {
+            border-color: $orange;
+        }
+    }
+
+    textarea {
+        height: 100%;
+        margin: 0;
+        resize: none;
+        @include media_interval(0, $media640) {
+            padding-top: 14px;
+            min-height: 215px;
+        }
+    }
+
+    &__footer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 0 0 30px;
+        @include media_interval($media768, 0) {
+            padding: 40px 0 40px;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        @include media_interval($media768, $media1024) {
+            justify-content: flex-end;
+        }
+
+        .form__btn {
+            align-self: center;
+            width: 100%;
+            margin-top: 30px;
+            @include media_interval($media768, 0) {
+                align-self: auto;
+                margin-top: 0;
+            }
+            @include media_interval($media480, 0) {
+                width: auto;
+            }
+        }
+    }
+
+
+    &__error {
+        margin-top: 20px;
+        @include font-size(14px, 18px);
+        color: $orange;
+        @include media_interval($media768, 0) {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-top: 0;
+        }
+        @include media_interval($media1024, 0) {
+            max-width: 280px;
+        }
+
+        &:before {
+            content: '';
+            display: inline-block;
+            margin-right: 10px;
+            @include bg($error);
+        }
+    }
+
+    &__btn-box {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        @include media_interval($media640, 0) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__btn-item {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        @include media_interval($media640, 0) {
+            width: auto;
+        }
+
+        &:last-child {
+            flex-direction: column;
+            @include media_interval($media640, 0) {
+                justify-content: flex-end;
+                flex-direction: row;
+            }
+        }
+
+        @include media_interval(0, $media640) {
+            .btn {
+                min-width: 220px;
+                margin-top: 37px;
+
+                &:last-child {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+
+    &__meta-btn {
+        position: relative;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+        text-transform: uppercase;
+        @include font-size(14px, 20px);
+        color: $title-color;
+        transition: color $animation-speed;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:before {
+            content: '';
+            margin-right: 20px;
+        }
+
+        @include media_interval($media1024, 0) {
+            &:hover {
+                color: $orange;
+            }
+        }
+
+        &.print-order {
+            @include media_interval(0, $media1024) {
+                display: none;
+            }
+
+            &:before {
+                @include bg($print);
+            }
+        }
+
+        &.info-order {
+            &:before {
+                @include bg($info);
+            }
+        }
+    }
+}
+
+.contacts-partners {
+    margin: 30px 0;
+
+    @include media_interval($media1024, 0) {
+        .swiper-pagination {
+            display: none;
+        }
+        .swiper-wrapper {
+            flex-wrap: wrap;
+            width: calc(100% + 30px);
+            margin: 0 -15px;
+        }
+        .swiper-slide {
+            width: 25%;
+            padding: 15px;
+        }
+    }
+
+
+}
+
+.partners-list {
+    padding-bottom: 60px;
+    @include media_interval($media1024, 0) {
+        padding-bottom: 0;
+    }
+
+    &__item {
+        overflow: hidden;
+
+        > * {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 170px;
+            padding: 40px;
+            background-color: $white;
+            transition: opacity $animation-speed, background-color $animation-speed;
+            @include media_interval($media768, 0) {
+                min-height: 215px;
+            }
+            //@include media_interval($media1024, 0) {
+            &:hover {
+                background-color: $blue;
+
+                img {
+                    opacity: 0;
+                }
+
+                .partners-list__item-content {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            //}
+            img {
+                transition: opacity $animation-speed;
+            }
+        }
+
+        &-content {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            color: $white;
+            display: flex;
+            flex-direction: column;
+            padding: 30px 30px 10px;
+            transform: translateY(-40px);
+            opacity: 0;
+            transition: opacity $animation-speed, transform $animation-speed;
+
+            //background-color: $blue;
+
+        }
+
+        &-title {
+            position: relative;
+            display: block;
+            margin-bottom: 5px;
+            padding-top: 17px;
+            text-transform: uppercase;
+            font-family: $rb;
+            @include font-size(16px, 26px);
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: block;
+                width: 35px;
+                height: 4px;
+                background-color: $orange;
+            }
+        }
+
+        &-text {
+            margin-bottom: 10px;
+            font-family: $rm;
+            @include font-size(14px, 22px);
+            @include media_interval($media1250, 0) {
+                width: 90%;
+            }
+        }
+
+        &-fake-link {
+            position: relative;
+            display: inline-flex;
+            padding-right: 30px;
+            text-align: right;
+            margin-top: auto;
+            margin-left: auto;
+            font-family: $rm;
+            @include font-size(14px, 22px);
+            color: $orange;
+            &:before {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                right: -16px;
+                top: 55%;
+                transform: translateY(-50%) rotate(-90deg);
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 8px solid $white;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                right: -30px;
+                bottom: -10px;
+                width: 40px;
+                height: 40px;
+                background-color: $orange;
+            }
+        }
+    }
+
+}

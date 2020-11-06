@@ -1,0 +1,192 @@
+.text-styles {
+    padding-bottom: 50px;
+    border-bottom: 1px solid #dddddd;
+    @include media_interval($media1024, 0) {
+        padding-bottom: 90px;
+    }
+
+    > * {
+        &:first-child {
+            margin-top: 0;
+            padding-top: 0;
+        }
+    }
+
+    .full-img {
+        text-align: center;
+    }
+
+    .img-description {
+        max-width: 780px;
+        margin: 40px auto;
+        @include font-size(16px, 30px);
+        @include media_interval($media1024, 0) {
+            margin: 53px auto 60px;
+        }
+    }
+
+    h2 {
+        position: relative;
+        margin: 40px 0;
+        padding-left: 30px;
+        text-transform: uppercase;
+        font-family: $rb;
+        @include font-size(20px, 26px);
+        color: $title-color;
+        @include media_interval($media768, $media1024) {
+            margin: 60px 0;
+            @include font-size(24px, 30px);
+        }
+        @include media_interval($media1024, 0) {
+            margin: 90px 0 60px;
+            @include font-size(24px, 30px);
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 5px;
+            height: 30px;
+            background-color: $orange;
+        }
+
+        + .table-wrap {
+            margin-top: -40px;
+        }
+    }
+
+    h3 {
+        margin: 40px 0;
+        text-transform: uppercase;
+        font-family: $rb;
+        @include font-size(16px, 22px);
+        color: $title-color;
+        @include media_interval($media768, $media1024) {
+            margin: 60px 0 40px;
+        }
+        @include media_interval($media1024, 0) {
+            margin: 95px 0 47px;
+        }
+    }
+
+    ul, ol {
+        margin: 30px 0;
+        padding: 0;
+        list-style: none;
+        @include media_interval($media768, 0) {
+            margin: 57px 0;
+        }
+
+        li {
+            position: relative;
+            margin-bottom: 18px;
+            padding-left: 30px;
+            @include media_interval($media768, 0) {
+                padding-left: 73px;
+            }
+        }
+    }
+
+    ul {
+        li {
+            &:before {
+                content: '';
+                position: absolute;
+                left: 15px;
+                top: 10px;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background-color: $orange;
+                @include media_interval($media768, 0) {
+                    left: 46px;
+                }
+            }
+        }
+    }
+
+    ol {
+        counter-reset: list;
+
+        li {
+            &:before {
+                counter-increment: list;
+                content: counter(list);
+                position: absolute;
+                top: 1px;
+                left: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                font-family: $rb;
+                @include font-size(14px, 14px);
+                color: $white;
+                background-color: $orange;
+                @include media_interval($media768, 0) {
+                    left: 23px;
+                }
+            }
+        }
+    }
+
+    .table-wrap {
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    table {
+        width: 100%;
+        min-width: 650px;
+        @include font-size(14px, 20px);
+        text-transform: uppercase;
+        color: $title-color;
+
+        thead {
+            tr {
+                border-bottom: 3px solid $orange;
+                font-family: $rb;
+            }
+        }
+
+        td {
+            padding: 15px 10px;
+            @include media_interval($media768, 0) {
+                padding: 21px 20px;
+            }
+        }
+
+        tr {
+            border-bottom: 1px solid #dddddd;
+        }
+    }
+
+    p {
+        margin: 25px 0;
+        @include font-size(16px, 30px);
+    }
+}
+
+.img-left {
+    display: inline-block;
+    width: 100%;
+    @include media_interval($media640, 0) {
+        width: auto;
+        margin-right: 34px;
+        float: left
+    }
+}
+
+.img-right {
+    display: inline-block;
+    width: 100%;
+    @include media_interval($media640, 0) {
+        width: auto;
+        margin-left: 34px;
+        float: right
+    }
+}

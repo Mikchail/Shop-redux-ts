@@ -1,0 +1,81 @@
+<div class="shopping">
+    <div class="container-fluid">
+        <div class="shopping__content">
+
+            <ul class="shopping__header">
+                <li>ARTICLE</li>
+                <li>DESCRIPTION</li>
+                <li>PACK</li>
+                <li>QUANTITY</li>
+                <li>PRICE</li>
+                <li>DELETE</li>
+            </ul>
+
+            <div class="shopping__list">
+                <ul class="shopping__item">
+                    <li>DIN 316</li>
+                    <li>WING SCREWS, M4X10, ZN</li>
+                    <li>100</li>
+                    <li><input type="number" class="quantity" value="100"></li>
+                    <li>1500$</li>
+                    <li>
+                        <button type="button" class="remove-cart"></button>
+                    </li>
+                </ul>
+                <ul class="shopping__item">
+                    <li>DIN 316</li>
+                    <li>WING SCREWS, M4X10, ZN</li>
+                    <li>100</li>
+                    <li><input type="number" class="quantity" value="1000"></li>
+                    <li>1500$</li>
+                    <li>
+                        <button type="button" class="remove-cart"></button>
+                    </li>
+                </ul>
+                <ul class="shopping__item">
+                    <li>DIN 316</li>
+                    <li>WING SCREWS, M4X25, ZN</li>
+                    <li>100</li>
+                    <li><input type="number" class="quantity" value="10000"></li>
+                    <li>1500$</li>
+                    <li>
+                        <button type="button" class="remove-cart"></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="contacts-form">
+    <div class="container-fluid">
+        <form action="/" class="form">
+            <div class="form__inner">
+                <h2 class="form__title">CUSTOMER DATA</h2>
+                <div class="form__content">
+                    <div class="form__column">
+                        <input type="text" name="Company name" placeholder="Company name *" class="form__field">
+                        <input type="text" name="Contact person" placeholder="Contact person *" class="form__field error">
+                        <input type="text" name="Phone" placeholder="Phone *" class="form__field">
+                        <input type="email" name="Email" placeholder="Email address *" class="form__field" required>
+                    </div>
+                    <div class="form__column">
+                        <textarea name="Message" placeholder="Comment" class="form__field"></textarea>
+                    </div>
+                </div>
+                <div class="form__footer">
+                    <div class="form__error">Enter a contact person</div>
+                </div>
+            </div>
+            <div class="form__btn-box">
+                <div class="form__btn-item">
+                    <a href="#" class="form__meta-btn print-order">PRINT ORDER PAGE</a>
+                    <a href="#" class="form__meta-btn info-order">TERMS & CONDITIONS</a>
+                </div>
+                <div class="form__btn-item">
+                    <a href="#" class="btn btn_no-bg">CONTINUE SHOPPING</a>
+                    <button type="submit" class="btn checkout-btn">CHECKOUT</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

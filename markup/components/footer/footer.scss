@@ -1,0 +1,171 @@
+.main-footer {
+    margin-top: auto;
+    &__navigation {
+        display: flex;
+        padding: 50px 0;
+        @include media_interval(0, $media768) {
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 0 35px;
+        }
+    }
+
+    &__logo {
+        padding-top: 10px;
+        @include media_interval($media768, 0) {
+            width: 26%;
+        }
+    }
+
+    &__menu {
+        @include media_interval(0, $media768) {
+            display: none;
+        }
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+        @include media_interval($media1024, $media1200) {
+            width: 59%;
+        }
+        @include media_interval($media1200, 0) {
+            width: 54%;
+        }
+
+        li {
+            @include font-size(14px, 30px);
+            color: #80909c;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        &-item {
+            width: 50%;
+            padding-right: 15px;
+            @include media_interval($media1024, 0) {
+                width: 32%;
+            }
+
+            &.main-footer__menu-products {
+                @include media_interval($media1024, 0) {
+                    width: 68%;
+                }
+            }
+        }
+
+        &-products {
+            .main-footer__menu-list {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            li {
+                width: 100%;
+                @include media_interval($media1024, 0) {
+                    width: 50%;
+                }
+            }
+        }
+
+        &-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        @include media_interval(0, $media768) {
+            margin-top: 30px;
+        }
+        @include media_interval($media768, 0) {
+            width: 20%;
+            margin-left: auto;
+        }
+        @include media_interval($media1024, $media1200) {
+            width: 15%;
+        }
+        @include media_interval($media1200, 0) {
+            width: 13%;
+        }
+    }
+
+    &__title {
+        margin-bottom: 10px;
+        font-family: $rb;
+        @include font-size(14px, 30px);
+        @include letter-spacing(100, 14px);
+        text-transform: uppercase;
+        color: $title-color;
+    }
+
+    &__phone {
+        font-family: $rb;
+        @include font-size(18px, 30px);
+        color: $title-color;
+    }
+
+    &__mail {
+        @include font-size(14px, 30px);
+        color: #80909c;
+    }
+
+    &__meta {
+        background-color: #27282e;
+        padding: 25px 0;
+        @include font-size(14px, 28px);
+
+        &-inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            @include media_interval($media768, 0) {
+                flex-direction: row;
+            }
+        }
+    }
+
+    a {
+        transition: color $animation-speed;
+        @include media_interval($media1024, 0) {
+            &:hover {
+                color: $orange;
+            }
+        }
+    }
+}
+
+.developed {
+    margin: 20px 35px 0 auto;
+    color: $text;
+    @include media_interval($media768, 0) {
+        margin: 0;
+    }
+
+        a {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        font-family: $rb;
+        color: $white;
+
+        &:after {
+            content: '';
+            display: inline-block;
+            margin-left: 35px;
+            @include bg($logo);
+        }
+    }
+}
+
+.footer-logo {
+    display: inline-block;
+    max-width: 200px;
+    @include media_interval($media768, $media1024) {
+        max-width: 150px;
+    }
+}

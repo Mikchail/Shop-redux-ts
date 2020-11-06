@@ -1,0 +1,31 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+
+<head>
+    {{> head/head head.defaults}}
+</head>
+
+<body class="page">
+%=symbols=%
+
+{{> header/header}}
+{{> breadcrumbs/breadcrumbs}}
+{{> page-title/product-hero}}
+<div class="page-content">
+    {{> search/search-page}}
+    {{> product-list/product-list}}
+    {{> pagination/pagination-product}}
+</div>
+
+<footer class="main-footer">
+    {{> footer/footer}}
+</footer>
+
+<script src="%=static=%js/separate-js/svg4everybody.min.js"></script>
+<script>svg4everybody();</script>
+
+<!-- Main scripts. You can replace it, but I recommend you to leave it here     -->
+<script src="%=static=%js/main%=hash=%%=min=%.js"></script>
+</body>
+
+</html>

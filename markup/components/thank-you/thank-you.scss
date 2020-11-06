@@ -1,0 +1,43 @@
+.meta-page {
+    &__content {
+        padding: 40px 0;
+        text-align: center;
+        @include media_interval($media768, 0) {
+            padding: 60px 0;
+        }
+    }
+
+    &__title {
+        position: relative;
+        margin-bottom: 15px;
+        padding-top: 80px;
+        font-family: $rb;
+        @include font-size(20px, 26px);
+        text-transform: uppercase;
+        color: $title-color;
+        @include media_interval($media768, 0) {
+            padding-top: 110px;
+            @include font-size(24px, 30px);
+        }
+            &:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%) scale(0.8);
+            @include bg($check);
+            @include media_interval($media768, 0) {
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    &__text {
+        max-width: 780px;
+        margin: 0 auto 35px;
+        b {
+            font-family: $rb;
+            color: $title-color;
+        }
+    }
+}

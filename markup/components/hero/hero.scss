@@ -1,0 +1,59 @@
+.hero {
+    position: relative;
+
+    &__thumb {
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        font-family: 'object-fit: cover; object-position: center;';
+        @include media_interval($media768, $media1024) {
+            object-position: 40% 50%;
+            font-family: 'object-fit: cover; object-position:  40% 50%;';
+        }
+    }
+
+    &__inner {
+        display: flex;
+        min-height: 410px;
+        align-items: flex-start;
+        padding-top: 160px;
+        padding-bottom: 105px;
+        @include media_interval($media768, 0) {
+            min-height: 500px;
+        }
+    }
+
+    &__title {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 600px;
+        @include font-size(24px, 30px);
+        text-transform: uppercase;
+        font-family: $rb;
+        color: $title-color;
+        @include media_interval($media768, 0) {
+            @include font-size(36px, 30px);
+        }
+
+        > * {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            margin: 11px 0;
+            padding: 0 20px;
+            border-left: 5px solid $orange;
+            @include media_interval($media768, 0) {
+                width: 50%;
+                margin: 24px 0;
+                padding: 0 20px 0 29px;
+            }
+        }
+    }
+}

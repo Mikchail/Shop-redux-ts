@@ -1,0 +1,219 @@
+.retail {
+    padding: 40px 0;
+    background-color: #f5f5f5;
+    @include media_interval($media768, 0) {
+        padding: 60px 0;
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: $white;
+        transition: box-shadow $animation-speed;
+        @include media_interval($media768, 0) {
+            flex-direction: row;
+        }
+        @include media_interval($media1024, 0) {
+            &:hover {
+                box-shadow: 0 5px 10px 0 rgba(128, 144, 156, 0.3);
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__thumb {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        @include media_interval(0, $media480) {
+            img {
+                width: 100%;
+            }
+        }
+        @include media_interval($media768, 0) {
+            width: 250px;
+        }
+    }
+
+    &__content {
+        width: 100%;
+        padding: 0 0 10px;
+        @include media_interval($media480, $media768) {
+            padding: 0 15px 15px;
+        }
+        @include media_interval($media768, $media1200) {
+            padding: 0 20px 15px 40px;
+        }
+        @include media_interval($media1200, 0) {
+            padding: 0 90px 15px 40px;
+        }
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 13px 0 10px;
+        border-bottom: 1px solid #dddddd;
+        @include media_interval($media768, 0) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__title {
+        position: relative;
+        margin: 10px 20px 10px 0;
+        padding-left: 30px;
+        text-transform: uppercase;
+        font-family: $rb;
+        @include font-size(20px, 26px);
+        color: $title-color;
+        @include media_interval($media768, 0) {
+            @include font-size(24px, 30px);
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 5px;
+            height: 30px;
+            background-color: #ee7023;
+        }
+    }
+
+    &__map-link {
+        position: relative;
+        margin: 10px 0;
+        padding-right: 22px;
+        @include font-size(16px, 22px);
+        color: $orange;
+        transition: color $animation-speed;
+        @include media_interval($media1024, 0) {
+            &:hover {
+                color: $blue;
+
+                &:after {
+                    opacity: 0;
+                }
+
+                &:before {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &:after, &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 3px;
+            transform: translateY(-50%);
+            transition: opacity $animation-speed;
+        }
+
+        &:after {
+            @include bg($arrow-light);
+        }
+
+        &:before {
+            opacity: 0;
+            @include bg($arrow-light_hover);
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 15px;
+        @include media_interval($media1100, 0) {
+            flex-wrap: nowrap;
+        }
+
+        > * {
+            flex-shrink: 0;
+            position: relative;
+            margin: 10px 0;
+            padding-left: 40px;
+            padding-right: 10px;
+            width: 100%;
+            @include media_interval($media600, $media1100) {
+                width: 50%;
+                margin: 20px 0;
+            }
+            @include media_interval($media1100, 0) {
+                width: auto;
+                margin: 20px 0;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+
+        span, a {
+            display: inline-block;
+        }
+    }
+
+    &__address {
+        @include media_interval($media1100, 0) {
+            width: 26%;
+        }
+
+        &:before {
+            @include bg($location)
+        }
+    }
+
+    &__link {
+        @include media_interval($media1100, 0) {
+            width: 39%;
+        }
+
+        &:before {
+            @include bg($phone)
+        }
+    }
+
+    &__open {
+        flex-grow: 1;
+
+        &:before {
+            @include bg($time)
+        }
+    }
+
+    &__phone {
+        color: $text;
+        transition: color $animation-speed;
+        @include media_interval($media1024, 0) {
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+
+    &__mail {
+        color: $orange;
+        transition: color $animation-speed;
+        @include media_interval($media1024, 0) {
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.breadcrumbs {
+    padding: 14px 0;
+    background-color: #ecf1f5;
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__item {
+        position: relative;
+        display: inline-block;
+        margin-right: 10px;
+        padding-right: 19px;
+        @include font-size(14px, 18px);
+        &:after {
+            content: '|';
+            position: absolute;
+            top: 45%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+        &:last-child {
+            margin: 0;
+            padding: 0;
+            &:after {
+                display: none;
+            }
+        }
+    }
+    a {
+        color: inherit;
+        transition: color $animation-speed;
+        text-decoration: underline;
+        @include media_interval($media1024, 0) {
+            &:hover {
+                color: $orange;
+            }
+        }
+    }
+}

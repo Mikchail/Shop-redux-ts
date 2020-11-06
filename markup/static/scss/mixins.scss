@@ -1,0 +1,424 @@
+// Mixins.
+
+@mixin nl {
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    list-style: none;
+    list-style-position: outside;
+}
+
+@mixin cf {
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    .lt-ie8 & {
+        zoom: 1;
+    }
+}
+
+@mixin blocks-justify {
+    text-align: justify;
+    text-justify: newspaper;
+}
+
+// You can add your own mixins here:
+
+
+//===================================================
+//  Алиас для "@media screen and (min-width: $from) and (max-width: $to)"
+//
+//  Пример:
+//    // красный фон при ширине окна от 768px включительно.
+//    div {
+//      @include media_interval($media768, 0) {
+//        background: red;
+//      }
+//    }
+//
+//
+//  Также можно использовать переменные-списки:
+//    $desktop: ($media768, $media1024);
+//    ...
+//    @include media_interval($desktop) { ... }
+//
+//===================================================
+@mixin media_interval($args...) {
+    $from: 0;
+    $to: 0;
+    $line: "";
+
+    $first: nth($args, 1);
+    @if (type_of($first) == list) {
+        // интервал в виде списка
+        $from: nth($first, 1);
+        $to: nth($first, 2);
+    } @else {
+        $from: nth($args, 1);
+        $to: nth($args, 2);
+    }
+
+    @if $from > 0 {
+        $line: "(min-width: #{$from})";
+    }
+
+    @if $to > 0 {
+        @if $from > 0 {
+            $line: "#{$line} and (max-width: #{$to - 1px})";
+        } @else {
+            $line: "(max-width: #{$to - 1px})";
+        }
+    }
+
+    @media all and #{$line} {
+        @content;
+    }
+}
+
+//===================================================
+//	Установка стилей CSS-свойства $property
+//  на основании SCSS-карты.
+//
+//  Пример:
+//    $width: (
+//      ($media768, $media1024): 80px,
+//      (0, $media768): 60px,
+//    );
+//    ...
+//    @include media_map(width, $width);
+//===================================================
+@mixin media_map($properties, $values) {
+    @if (type_of($properties) != list) {
+        $property:($properties);
+    }
+
+    $values_type: type_of($values);
+    @if ($values_type == map) {
+        @each $media, $value in $values {
+            @include media_interval($media...) {
+                @each $property in $properties {
+                    #{$property}: #{$value};
+                }
+            }
+        }
+    } @else {
+        @each $property in $properties {
+            #{$property}: #{$values};
+        }
+    }
+}
+
+
+@mixin font-size($size, $line_height:0) {
+    font-size: $size;
+
+    @if $size != 0 {
+        $remSize: $size / 16px;
+        font-size: $remSize * 1rem;
+    }
+
+    @if $line_height != 0 {
+        line-height: $line_height / $size;
+    }
+}
+
+// пример @include letter-spacing(-25, 24px);
+@mixin letter-spacing($ps, $size) {
+    letter-spacing: $ps * $size / 1000;
+}
+
+@mixin no_fontsize() {
+    font-size: 0;
+}
+
+
+/*
+  Многоколоночная верстка через flexbox.
+
+  Пример:
+    .list {
+      @include flexbox;
+      @include flex-flow(row wrap);
+
+      .item {
+        @include flex-columns(2, 10px, 10px);
+      }
+    }
+*/
+@mixin flex-columns($columns, $margin-right:null, $margin-top:null) {
+    $min_basis: 100% / ($columns + 1);
+    $max_basis: 100% / $columns;
+    $basis: min($min_basis + 0.5%, ($min_basis + $max_basis) / 2);
+    @include flex(1 0 $basis);
+
+    @if ($margin-top) {
+        &:nth-of-type(n+#{$columns+1}) {
+            margin-top: $margin-top;
+        }
+    }
+
+    @if ($margin-right) {
+        @if (str_index(#{$margin-right}, '%')) {
+            max-width: #{$max_basis - (($columns - 1) * $margin-right) / $columns};
+        } @else {
+            max-width: calc(#{$max_basis} - #{(($columns - 1) * $margin-right) / $columns});
+        }
+
+        margin-right: $margin-right;
+        &:nth-of-type(#{$columns}n) {
+            margin-right: 0;
+        }
+    } @else {
+        max-width: $max_basis;
+    }
+}
+
+
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+// row | row-reverse | column | column-reverse
+@mixin flex-direction($direction) {
+    @if ($direction == 'row-reverse') {
+        -webkit-box-direction: reverse;
+    } @else if ($direction == 'column') {
+        -webkit-box-orient: vertical;
+    } @else if ($direction == 'column') {
+        -webkit-box-direction: reverse;
+        -webkit-box-orient: vertical;
+    }
+
+    -webkit-box-flex-direction: $direction;
+    -moz-box-flex-direction: $direction;
+    -webkit-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+}
+
+// nowrap | wrap | wrap-reverse
+@mixin flex-wrap($wrap) {
+    -webkit-box-flex-wrap: $wrap;
+    -moz-box-flex-wrap: $wrap;
+    -webkit-flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+}
+
+// flex-start | flex-end | center | space-between | space-around
+@mixin justify-content($alignment) {
+    $old_map: (
+        flex-start: start,
+        flex-end: end,
+        center: center,
+        space-between: justify,
+    );
+    @if map_has_key($old_map, $alignment) {
+        -webkit-box-pack: map_get($old_map, $alignment);
+    }
+
+    -webkit-box-justify-content: $alignment;
+    -moz-box-justify-content: $alignment;
+    -webkit-justify-content: $alignment;
+    -ms-justify-content: $alignment;
+    justify-content: $alignment;
+}
+
+// flex-start | flex-end | center | baseline | stretch
+@mixin align-items($alignment) {
+    $old_map: (
+        flex-start: start,
+        flex-end: end,
+        center: center,
+        baseline: baseline,
+        stretch: stretch,
+    );
+    @if map_has_key($old_map, $alignment) {
+        -webkit-box-align: map_get($old_map, $alignment);
+    }
+
+    -webkit-box-align-items: $alignment;
+    -moz-box-align-items: $alignment;
+    -webkit-align-items: $alignment;
+    -ms-align-items: $alignment;
+    align-items: $alignment;
+}
+
+// flex-start | flex-end | center | space-between | space-around | stretch
+@mixin align-content($alignment) {
+    -webkit-box-align-content: $alignment;
+    -moz-box-align-content: $alignment;
+    -webkit-align-content: $alignment;
+    -ms-align-content: $alignment;
+    align-content: $alignment;
+}
+
+// auto | flex-start | flex-end | center | baseline | stretch
+@mixin align-self($alignment) {
+    -webkit-box-align-self: $alignment;
+    -moz-box-align-self: $alignment;
+    -webkit-align-self: $alignment;
+    -ms-align-self: $alignment;
+    align-self: $alignment;
+}
+
+// int >= 0
+@mixin flex-grow($grow) {
+    @if ($grow != 0) {
+        -webkit-box-flex: $grow;
+    }
+
+    -webkit-box-flex-grow: $grow;
+    -moz-box-flex-grow: $grow;
+    -webkit-flex-grow: $grow;
+    -ms-flex-grow: $grow;
+    flex-grow: $grow;
+}
+
+// int >= 0
+@mixin flex-shrink($shrink) {
+    -webkit-box-flex-shrink: $shrink;
+    -moz-box-flex-shrink: $shrink;
+    -webkit-flex-shrink: $shrink;
+    -ms-flex-shrink: $shrink;
+    flex-shrink: $shrink;
+}
+
+// int
+@mixin order($order) {
+    -webkit-box-ordinal-group: $order;
+    -moz-box-ordinal-group: $order;
+    -ms-flex-order: $order;
+    -webkit-order: $order;
+    order: $order;
+}
+
+// length | auto
+@mixin flex-basis($basis) {
+    @if ($basis == 0) {
+        // IE fix
+        $basis: 0%;
+    }
+
+    -webkit-box-flex-basis: $basis;
+    -moz-box-flex-basis: $basis;
+    -webkit-flex-basis: $basis;
+    -ms-flex-basis: $basis;
+    flex-basis: $basis;
+}
+
+// <'flex-direction'> || <'flex-wrap'>
+@mixin flex-flow($args...) {
+    $params: nth($args, 1);
+    @if (length($params) == 2) {
+        $direction: nth($params, 1);
+        @if ($direction == 'row-reverse') {
+            -webkit-box-direction: reverse;
+        } @else if ($direction == 'column') {
+            -webkit-box-orient: vertical;
+        } @else if ($direction == 'column') {
+            -webkit-box-direction: reverse;
+            -webkit-box-orient: vertical;
+        }
+    }
+
+    -webkit-box-flex-flow: $args;
+    -moz-box-flex-flow: $args;
+    -webkit-flex-flow: $args;
+    -ms-flex-flow: $args;
+    flex-flow: $args;
+}
+
+// none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+@mixin flex($args...) {
+    $result: ();
+    $params: nth($args, 1);
+
+    @if (length($params) == 3) {
+        @if (nth($params, 1) != 0) {
+            -webkit-box-flex: nth($params, 1);
+        }
+    }
+
+    // IE fix
+    @if ((length($params) == 3) and (nth($params, 3) == 0)) {
+        $result: replace-nth($params, 3, 0.1px);  // 0.1px - хак для cssmin
+    } @else {
+        $result: $params;
+    }
+
+    -moz-box-flex: $result;
+    -webkit-flex: $result;
+    -ms-flex: $result;
+    flex: $result;
+}
+
+
+//=========================================
+//  Вертикальное и горизонтальное центрирование
+//  картинки + растягивание её на весь родительский блок,
+//  если её стандартного размера недостаточно.
+//
+//  Параметр $minSize может помочь с ошибками округления.
+//  Для этого нужно указать значение, чуть болше 100%.
+//  Например:
+//    @include centrizeImage($minSize: 100.5%);
+//=========================================
+@mixin centrizeImage($zIndex: 1, $minSize: 100%) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    min-width: #{$minSize};
+    min-height: #{$minSize};
+    //max-width: none;
+    z-index: #{$zIndex};
+    @include transform(translate(-50%, -50%));
+}
+
+// Пример: @include transform(scale(1));
+@mixin transform($args...) {
+    -webkit-transform: $args;
+    -moz-transform: $args;
+    -ms-transform: $args;
+    -o-transform: $args;
+    transform: $args;
+}
+
+@mixin perspective($args...) {
+    -webkit-perspective: $args;
+    perspective: $args;
+}
+
+@mixin perspective-origin($args...) {
+    -webkit-perspective-origin: $args;
+    perspective-origin: $args;
+}
+
+@mixin backface-visibility($args...) {
+    -webkit-backface-visibility: $args;
+    backface-visibility: $args;
+}
+
+@mixin transform-style($args...) {
+    -webkit-transform-style: $args;
+    transform-style: $args;
+}
+
+@mixin transform-origin($args...) {
+    -webkit-transform-origin: $args;
+    -moz-transform-origin: $args;
+    -ms-transform-origin: $args;
+    -o-transform-origin: $args;
+    transform-origin: $args;
+}
