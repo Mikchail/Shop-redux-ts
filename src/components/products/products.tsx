@@ -1,6 +1,12 @@
 import * as React from "react";
+import { connect } from 'react-redux'
+import { getProducts } from '../../store/product/selectors'
+import { fetchItems } from '../../actions/products'
 
-const ProductListAndItem = () => {
+const ProductListAndItem = (props) => {
+  React.useEffect(() => {
+    props.loadProduct();
+  },[])
   return (
     <div className="products">
       <div className="container-fluid">
@@ -59,5 +65,12 @@ const ProductListAndItem = () => {
     </div>
   );
 };
-
-export default ProductListAndItem;
+const mapStateToProps = (state) => ({
+  products: getProducts(state)
+})
+const mapDispatchToProps = (dispatch) => ({
+  loadProduct: () => {
+    dispatch(fetchItems())
+  }
+})
+export default connect(mapStateToProps, mapDispatchToProps)(ProductListAndItem);
