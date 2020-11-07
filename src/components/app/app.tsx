@@ -6,10 +6,11 @@ import Main from "../../pages/main/main";
 import Contacts from "../../pages/contacts/contacts";
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
-import CategoryPage from './../../pages/category/category';
+import CategoryPage from "./../../pages/category/category";
 
 import {strews} from "../../mocks/product-strew";
-import ProductListAndItem from './../products/products';
+import ProductListAndItem from "./../products/products";
+import ProductsList from "../products-list/products-list";
 
 interface Props {}
 
@@ -28,16 +29,18 @@ const App: React.FC<Props> = (props) => {
           <ProductListAndItem />
         </Route>
         {/* <Route path="/fasteners/:title?" render={(routerProps) => { */}
-        <Route path={`${routers.FASTENERS}/:title?/:id?`} render={(routerProps) => {
-          const title = routerProps.match.params.title
-          let itemsParent = strews
-          if(title){
-            let child = strews.find((it)=>it.link === title)
-            return <CategoryPage items={child.items} />
-          }
-          return <CategoryPage items={itemsParent} />
-
-        }} />
+        <Route
+          path={`${routers.FASTENERS}/:title?/:id?`}
+          render={(routerProps) => {
+            const title = routerProps.match.params.title;
+            let itemsParent = strews;
+            if (title) {
+              let child = strews.find((it) => it.link === title);
+              return <ProductsList />;
+            }
+            return <CategoryPage items={itemsParent} />;
+          }}
+        />
         <Route>
           <h3>Ничего</h3>
         </Route>

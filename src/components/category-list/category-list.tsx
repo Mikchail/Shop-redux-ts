@@ -1,6 +1,6 @@
 import * as React from "react";
 import CategoryItem from "./../category-item/category-item";
-import {CategoryItemTypes} from "./../category-item/category-item";
+import {CategoryItemTypes} from "../../types/types-products";
 
 interface Props {
   items: Array<CategoryItemTypes>;
