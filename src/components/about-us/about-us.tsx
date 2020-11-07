@@ -1,6 +1,31 @@
 import * as React from "react";
+import {connect} from "react-redux";
+import {fetchItems} from "../../actions/about-us";
+import {getAboutUs} from "../../store/about-us/selectors";
+import {Swiper, SwiperSlide} from "swiper/react";
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+interface AboutUs {
+  id: string;
+  title: string;
+  src: string;
+  link: string;
+  date: string;
+  price: number;
+}
 
-const AboutUs = () => {
+interface Props {
+  aboutUs: Array<AboutUs>;
+  loadAboutUs: () => void;
+}
+
+const AboutUs = (props: Props) => {
+  const {aboutUs, loadAboutUs} = props;
+  console.log(aboutUs);
+
+  React.useEffect(() => {
+    loadAboutUs();
+  }, []);
   return (
     <div className="about">
       <div className="container-fluid">
@@ -22,87 +47,45 @@ const AboutUs = () => {
               </a>
             </div>
           </div>
-          <div className="about__slider swiper-container slider">
-            <div className="swiper-wrapper">
-              <div className="about__slider-item swiper-slide">
-                <div className="about__slider-thumb">
-                  <img
-                    src="./img/content/main-page/about-slide-1.jpg"
-                    alt="alt"
-                  />
-                  <span className="about__slider-date">February 12, 2020</span>
-                </div>
-                <h3 className="about__slider-title">
-                  DELVE 2 STORES WILL BE CLOSED!
-                </h3>
-              </div>
-              <div className="about__slider-item swiper-slide">
-                <div className="about__slider-thumb">
-                  <img
-                    src="./img/content/main-page/about-slide-2.jpg"
-                    alt="alt"
-                  />
-                  <span className="about__slider-date">All of February</span>
-                </div>
-                <h3 className="about__slider-title">
-                  what is good production paper and methods of application
-                </h3>
-              </div>
-              <div className="about__slider-item swiper-slide">
-                <div className="about__slider-thumb">
-                  <img
-                    src="./img/content/main-page/about-slide-1.jpg"
-                    alt="alt"
-                  />
-                  <span className="about__slider-date">February 12, 2020</span>
-                </div>
-                <h3 className="about__slider-title">
-                  DELVE 2 STORES WILL BE CLOSED!
-                </h3>
-              </div>
-              <div className="about__slider-item swiper-slide">
-                <div className="about__slider-thumb">
-                  <img
-                    src="./img/content/main-page/about-slide-2.jpg"
-                    alt="alt"
-                  />
-                  <span className="about__slider-date">All of February</span>
-                </div>
-                <h3 className="about__slider-title">
-                  what is good production paper and methods of application
-                </h3>
-              </div>
-              <div className="about__slider-item swiper-slide">
-                <div className="about__slider-thumb">
-                  <img
-                    src="./img/content/main-page/about-slide-1.jpg"
-                    alt="alt"
-                  />
-                  <span className="about__slider-date">February 12, 2020</span>
-                </div>
-                <h3 className="about__slider-title">
-                  DELVE 2 STORES WILL BE CLOSED!
-                </h3>
-              </div>
-              <div className="about__slider-item swiper-slide">
-                <div className="about__slider-thumb">
-                  <img
-                    src="./img/content/main-page/about-slide-2.jpg"
-                    alt="alt"
-                  />
-                  <span className="about__slider-date">All of February</span>
-                </div>
-                <h3 className="about__slider-title">
-                  what is good production paper and methods of application
-                </h3>
-              </div>
-            </div>
-            <div className="swiper-pagination"></div>
-          </div>
+
+          <Swiper
+            className={`about__slider`}
+            spaceBetween={30}
+            slidesPerView={2}
+            pagination={{ clickable: true }}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            {aboutUs &&
+              aboutUs.map((item) => {
+                return (
+                  <SwiperSlide
+                    key={item.id}
+                    className={"about__slider-item"}
+                  >
+                    <div className="about__slider-thumb">
+                      <img src={item.src} alt="alt" />
+                      <span className="about__slider-date">{item.date}</span>
+                    </div>
+                    <h3 className="about__slider-title">{item.title}</h3>
+                  </SwiperSlide>
+                );
+              })}
+          </Swiper>
+
+          {/* <div className="swiper-pagination"></div> */}
         </div>
       </div>
     </div>
   );
 };
 
-export default AboutUs;
+const mapStateToProps = (state) => ({
+  aboutUs: getAboutUs(state),
+});
+const mapDispatchToProps = (dispatch) => ({
+  loadAboutUs: () => {
+    dispatch(fetchItems());
+  },
+});
+export default connect(mapStateToProps, mapDispatchToProps)(AboutUs);

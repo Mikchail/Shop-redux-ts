@@ -48,7 +48,7 @@ const menu: Array<Menu> = [
       },
       {
         title: `Work gloves`,
-        link: `Work_gloves`,
+        link: `work_gloves`,
       },
       {
         title: `Work gloves`,
@@ -56,7 +56,7 @@ const menu: Array<Menu> = [
       },
       {
         title: `Technical aerosols`,
-        link: `Technical_aerosols`,
+        link: `technical_aerosols`,
       },
       {
         title: `ndustrial paper`,

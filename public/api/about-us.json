@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "title": "DELVE 2 STORES WILL BE CLOSED!",
+    "src": "./img/content/main-page/about-slide-1.jpg",
+    "link": "screws",
+    "price": 200.99,
+    "date": "February 12, 2020"
+  },
+  {
+    "id": "2",
+    "title": "what is good production paper and methods of application",
+    "src": "./img/content/main-page/about-slide-2.jpg",
+    "link": "Nuts_and_washers",
+    "price": 200.99,
+    "date": "All of February"
+  },
+  {
+    "id": "3",
+    "title": "DELVE 2 STORES WILL BE CLOSED!",
+    "src": "./img/content/main-page/about-slide-1.jpg",
+    "link": "Fasteners",
+    "price": 200.99,
+    "date": "February 12, 2020"
+  },
+  {
+    "id": "4",
+    "title": "DELVE 2 STORES WILL BE CLOSED!",
+    "src": "./img/content/main-page/about-slide-1.jpg",
+    "link": "technical_aerosols",
+    "price": 200.99,
+    "date": "February 12, 2020"
+  },
+  {
+    "id": "5",
+    "title": "what is good production paper and methods of application",
+    "src": "./img/content/main-page/about-slide-1.jpg",
+    "link": "industrial_paper",
+    "price": 200.99,
+    "date": "All of February"
+  },
+  {
+    "id": "6",
+    "title": "DELVE 2 STORES WILL BE CLOSED!",
+    "src": "./img/content/main-page/about-slide-1.jpg",
+    "link": "technical_aerosols",
+    "price": 200.99,
+    "date": "February 12, 2020"
+  },
+  {
+    "id": "7",
+    "title": "what is good production paper and methods of application",
+    "src": "./img/content/main-page/about-slide-1.jpg",
+    "link": "industrial_paper",
+    "price": 200.99,
+    "date": "All of February"
+  }
+]

@@ -4,5 +4,6 @@ type NameSpace = {
 }
 
 export const NameSpace = {
-  PRODUCTS: `PRODUCTS`
+  PRODUCTS: `PRODUCTS`,
+  ABOUTUS: `ABOUTUS`
 }

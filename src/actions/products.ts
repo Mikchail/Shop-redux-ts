@@ -1,26 +1,19 @@
- 
-import { Dispatch } from 'redux';
-import { LOAD_PRODUCT } from '../types/action-types'
+import {Dispatch} from "redux";
+import {LOAD_PRODUCT} from "../types/action-types";
 
 export interface loadProducts {
   type: LOAD_PRODUCT;
   payload: [];
 }
 
-export const setItems = (items:[]): loadProducts => ({
+export const setItems = (items: []): loadProducts => ({
   type: LOAD_PRODUCT,
-  payload: items
+  payload: items,
 });
 
+export const fetchItems = () => async (dispatch: Dispatch, _getState, api) => {
 
+  const items = await api.get("products.json").then((res) => res.data);
 
-
-export const fetchItems = () => async (dispatch: Dispatch) => {
-  console.log(dispatch);
-
-  const items = await fetch('api/products.json', {
-    headers: { 'Content-Type': 'application/json' }
-  }).then(res => res.json());
-  
   dispatch(setItems(items));
 };

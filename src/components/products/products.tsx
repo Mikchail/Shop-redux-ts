@@ -1,76 +1,57 @@
 import * as React from "react";
-import { connect } from 'react-redux'
-import { getProducts } from '../../store/product/selectors'
-import { fetchItems } from '../../actions/products'
+import {Link} from "react-router-dom";
+import {connect} from "react-redux";
+import {getProducts} from "../../store/product/selectors";
+import {fetchItems} from "../../actions/products";
 
-const ProductListAndItem = (props) => {
+interface Products {
+  id: string,
+  name: string,
+  src: string,
+  link: string,
+  price: number
+}
+
+interface Props {
+  products: Array<Products>
+  loadProduct: () => void
+}
+
+const ProductListAndItem = (props: Props) => {
+  const {products,loadProduct} = props
   React.useEffect(() => {
-    props.loadProduct();
-  },[])
+    loadProduct()
+  }, []);
   return (
     <div className="products">
       <div className="container-fluid">
         <h2 className="products__title title-h2">Products</h2>
         <ul className="products__list">
-          <li className="products__item">
-            <a href="#" className="products__link">
-              <span className="products__thumb">
-                <img src="./img/content/main-page/dlv1.jpg" alt="alt" />
-              </span>
-              <span className="products__link-title">Screws</span>
-            </a>
-          </li>
-          <li className="products__item">
-            <a href="#" className="products__link">
-              <span className="products__link-title">Nuts and washers</span>
-              <span className="products__thumb">
-                <img src="./img/content/main-page/dlv2.jpg" alt="alt" />
-              </span>
-            </a>
-          </li>
-          <li className="products__item">
-            <a href="#" className="products__link">
-              <span className="products__link-title">Fasteners</span>
-              <span className="products__thumb">
-                <img src="./img/content/main-page/dlv3.jpg" alt="alt" />
-              </span>
-            </a>
-          </li>
-          <li className="products__item">
-            <a href="#" className="products__link">
-              <span className="products__link-title">Technical aerosols</span>
-              <span className="products__thumb">
-                <img src="./img/content/main-page/dlv4.jpg" alt="alt" />
-              </span>
-            </a>
-          </li>
-          <li className="products__item">
-            <a href="#" className="products__link">
-              <span className="products__link-title">Industrial paper</span>
-              <span className="products__thumb">
-                <img src="./img/content/main-page/dlv5.jpg" alt="alt" />
-              </span>
-            </a>
-          </li>
-          <li className="products__item">
-            <a href="#" className="products__link">
-              <span className="products__link-title">Work gloves</span>
-              <span className="products__thumb">
-                <img src="./img/content/main-page/dlv6.jpg" alt="alt" />
-              </span>
-            </a>
-          </li>
+          {products && products.map((product) => {
+            return (
+              <li key={product.id} className="products__item">
+                <Link to={product.link} className="products__link">
+                  <span className="products__thumb">
+                    <img src={product.src} alt={product.name} />
+                  </span>
+                  <span className="products__link-title">{product.name}</span>
+                </Link>
+              </li>
+            );
+          })}
+         
         </ul>
       </div>
     </div>
   );
 };
+
 const mapStateToProps = (state) => ({
-  products: getProducts(state)
-})
+  products: getProducts(state),
+});
 const mapDispatchToProps = (dispatch) => ({
   loadProduct: () => {
-    dispatch(fetchItems())
-  }
-})
+    dispatch(fetchItems());
+  },
+});
 export default connect(mapStateToProps, mapDispatchToProps)(ProductListAndItem);
