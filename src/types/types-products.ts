@@ -6,13 +6,29 @@ export interface InnerItem {
   lmm: string;
   pack: number;
   price: number;
-  id: number;
+  id: string;
+  parent: string;
 }
+
 export interface CategoryItemTypes {
+  parent: string;
   id: string;
   src: string;
+  srcMini: string;
   article: string;
   title: string;
+  name: string;
   link: string;
   items?: Array<InnerItem>;
+}
+
+export interface ProductTypes {
+  parent?: Array<CategoryItemTypes>;
+  id: string;
+  src: string;
+  srcMini: string;
+  article: string;
+  title: string;
+  name: string;
+  link: string;
 }

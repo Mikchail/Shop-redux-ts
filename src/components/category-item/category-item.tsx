@@ -5,15 +5,17 @@ import {CategoryItemTypes} from "../../types/types-products";
 
 export interface Props {
   item: CategoryItemTypes;
+  match: any
 }
 
 const CategoryItem: React.FC<Props> = (props: Props) => {
   const {src, article, title, link, id} = props.item;
-
+  const {match} = props;
+  
   return (
     <li className="category__item">
       <Link
-        to={`${routers.FASTENERS}${link ? "/" + link : "/"}`}
+        to={`${match.url}${link ? "/" + link : ""}`}
         className="category__link"
       >
         <span className="category__thumb">

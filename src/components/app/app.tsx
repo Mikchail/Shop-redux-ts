@@ -11,10 +11,23 @@ import CategoryPage from "./../../pages/category/category";
 import {strews} from "../../mocks/product-strew";
 import ProductListAndItem from "./../products/products";
 import ProductsList from "../products-list/products-list";
+import RoutersOfProducts from "../routers-products/routers-products";
+import {fetchItems} from "./../../actions/products";
+import {getProducts} from "./../../store/product/selectors";
+import {connect} from "react-redux";
+import {ProductTypes} from "../../types/types-products";
 
-interface Props {}
+interface Props {
+  loadProduct: () => void;
+  products: Array<ProductTypes>;
+}
 
-const App: React.FC<Props> = (props) => {
+const App: React.FC<Props> = (props: Props) => {
+  const {loadProduct, products} = props;
+  React.useEffect(() => {
+    loadProduct();
+  }, []);
+
   return (
     <BrowserRouter>
       <Header />
@@ -25,22 +38,12 @@ const App: React.FC<Props> = (props) => {
         <Route path={`${routers.CONTACTS}`}>
           <Contacts />
         </Route>
-        <Route path={`${routers.PRODUCTS}`}>
-          <ProductListAndItem />
+        <Route exact path={`${routers.PRODUCTS}`}>
+          <ProductListAndItem products={products} />
         </Route>
-        {/* <Route path="/fasteners/:title?" render={(routerProps) => { */}
-        <Route
-          path={`${routers.FASTENERS}/:title?/:id?`}
-          render={(routerProps) => {
-            const title = routerProps.match.params.title;
-            let itemsParent = strews;
-            if (title) {
-              let child = strews.find((it) => it.link === title);
-              return <ProductsList />;
-            }
-            return <CategoryPage items={itemsParent} />;
-          }}
-        />
+        
+        <RoutersOfProducts products={products}/>
+
         <Route>
           <h3>Ничего</h3>
         </Route>
@@ -49,5 +52,12 @@ const App: React.FC<Props> = (props) => {
     </BrowserRouter>
   );
 };
-
-export default App;
+const mapStateToProps = (state) => ({
+  products: getProducts(state),
+});
+const mapDispatchToProps = (dispatch) => ({
+  loadProduct: () => {
+    dispatch(fetchItems());
+  },
+});
+export default connect(mapStateToProps, mapDispatchToProps)(App);

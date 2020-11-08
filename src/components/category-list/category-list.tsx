@@ -4,10 +4,12 @@ import {CategoryItemTypes} from "../../types/types-products";
 
 interface Props {
   items: Array<CategoryItemTypes>;
+  match: any
 }
 
 const CategoryList: React.FC<Props> = (props: Props) => {
-  const {items} = props;
+  const {items,match} = props;
+  
   return (
     <div className="category">
       <div className="container-fluid">
@@ -47,7 +49,7 @@ const CategoryList: React.FC<Props> = (props: Props) => {
           <ul className="category__list">
             {items &&
               items.map((item) => {
-                return <CategoryItem key={item.id} item={item} />;
+                return <CategoryItem match={match}  key={item.id} item={item} />;
               })}
           </ul>
         </div>

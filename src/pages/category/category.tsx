@@ -1,13 +1,15 @@
 import * as React from "react";
 import CategoryList from "./../../components/category-list/category-list";
+import {CategoryItemTypes} from "../../types/types-products";
 interface Props {
-  items: Array<any>;
+  items: Array<CategoryItemTypes>;
+  match: any;
 }
 const CategoryPage: React.FC<Props> = (props: Props) => {
-  const {items} = props;
+  const {items ,match} = props;
   return (
     <div>
-      <CategoryList items={items} />
+      <CategoryList match={match} items={items} />
     </div>
   );
 };

@@ -1,8 +1,13 @@
 import * as React from "react";
 import ProductsItem from "../products-item/products-item";
+import { InnerItem } from '../../types/types-products'
 
-const ProductsList = () => {
-  const items = [];
+interface Props {
+  items: Array<InnerItem>
+}
+
+const ProductsList: React.FC<Props> = (props: Props) => {
+  const {items} = props;
   return (
     <div className="product">
       <div className="container-fluid">
@@ -39,7 +44,7 @@ const ProductsList = () => {
           <div className="product__list">
             {items &&
               items.map((item) => {
-                <ProductsItem />;
+                return <ProductsItem key={item.id} item={item} />;
               })}
           </div>
         </div>

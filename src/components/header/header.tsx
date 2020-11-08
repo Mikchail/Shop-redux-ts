@@ -1,6 +1,7 @@
 import * as React from "react";
 import {Link} from "react-router-dom";
 import {menu} from "../../mocks/menu-mock";
+import { routers } from './../../const/const';
 
 type Props = {
   title?: string;
@@ -23,7 +24,7 @@ const Header: React.FC<Props> = (props: Props) => {
               return (
                 <li key={element.title + index} className={element.className}>
                   <Link
-                    to={`${element.link.toLowerCase()}`}
+                    to={`/${element.link.toLowerCase()}`}
                     className={`main-header__menu-item ${
                       element.rowMenu ? " arrow-icon" : ""
                     }`}
@@ -36,14 +37,14 @@ const Header: React.FC<Props> = (props: Props) => {
                         return (
                           <li key={elementInner.title + indexInner}>
                             {element.rowMenu && element.rowMenu ? (
-                              <Link to={`${elementInner.link.toLowerCase()}`}>
+                              <Link to={`${routers.PRODUCTS}/${elementInner.link.toLowerCase()}`}>
                                 <span
                                   className={`main-header__submenu-icon icon-${
                                     indexInner + 1
                                   }`}
                                 ></span>
                                 <span className="main-header__submenu-label">
-                                  {elementInner.title}
+                                  {elementInner.title }
                                 </span>
                               </Link>
                             ) : (
