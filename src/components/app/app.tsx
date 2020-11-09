@@ -16,6 +16,7 @@ import {fetchItems} from "./../../actions/products";
 import {getProducts} from "./../../store/product/selectors";
 import {connect} from "react-redux";
 import {ProductTypes} from "../../types/types-products";
+import BasketPage from './../../pages/basket-page/basket-page';
 
 interface Props {
   loadProduct: () => void;
@@ -41,9 +42,11 @@ const App: React.FC<Props> = (props: Props) => {
         <Route exact path={`${routers.PRODUCTS}`}>
           <ProductListAndItem products={products} />
         </Route>
-        
+        <Route exact path={`${routers.BASKET}`}>
+          <BasketPage/>
+        </Route>
         <RoutersOfProducts products={products}/>
-
+       
         <Route>
           <h3>Ничего</h3>
         </Route>

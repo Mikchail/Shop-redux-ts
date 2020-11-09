@@ -9,7 +9,7 @@ export interface Props {
 }
 
 const CategoryItem: React.FC<Props> = (props: Props) => {
-  const {src, article, title, link, id} = props.item;
+  const {src, article, title, link, id,items} = props.item;
   const {match} = props;
   
   return (
@@ -23,6 +23,7 @@ const CategoryItem: React.FC<Props> = (props: Props) => {
         </span>
         <span className="category__id">{id}</span>
         <span className="category__title">{title}</span>
+        <span className="counter_icon category__id_big">{items.length} items</span>
       </Link>
     </li>
   );

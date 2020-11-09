@@ -4,6 +4,7 @@ import ProductsList from "./../products-list/products-list";
 import CategoryPage from "./../../pages/category/category";
 import {routers} from "./../../const/const";
 import {ProductTypes} from "../../types/types-products";
+import ProductsPage from '../../pages/products-page/products-page';
 
 interface Props {
   products: Array<ProductTypes>;
@@ -28,10 +29,10 @@ const RoutersOfProducts: React.FC<Props> = (props: Props) => {
                 const match = routerProps.match;
                 if (title) {
                   let child = product.parent.find((it) => it.link === title);
-                  return <ProductsList items={child.items} />;
+                  return <ProductsPage title={child.title} srcImg={child.src} match={match} items={child.items} />;
                 } else if (title && id) {
                 }
-                return <CategoryPage match={match} items={product.parent} />;
+                return <CategoryPage match={match} title={product.title} items={product.parent}  />;
               }}
             />
           );

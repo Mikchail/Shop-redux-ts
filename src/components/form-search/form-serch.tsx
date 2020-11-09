@@ -1,8 +1,11 @@
 import * as React from "react";
-
-const FormSearch = () => {
+interface Props {
+  className?: string;
+}
+const FormSearch: React.FC<Props> = (props: Props) => {
+  const {className} = props;
   return (
-    <div className="search">
+    <div className={`search ${className}`}>
       <div className="container-fluid">
         <div className="search__inner">
           <button type="button" className="search__title">

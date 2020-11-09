@@ -1,7 +1,7 @@
 import * as React from "react";
 import {Link} from "react-router-dom";
 import {menu} from "../../mocks/menu-mock";
-import { routers } from './../../const/const';
+import {routers} from "./../../const/const";
 
 type Props = {
   title?: string;
@@ -10,7 +10,6 @@ type Props = {
 const Header: React.FC<Props> = (props: Props) => {
   return (
     <header className="main-header">
-      
       <div className="container-fluid">
         <div className="main-header__inner">
           <Link to="/" className="logo" aria-label="Delve 2">
@@ -37,14 +36,18 @@ const Header: React.FC<Props> = (props: Props) => {
                         return (
                           <li key={elementInner.title + indexInner}>
                             {element.rowMenu && element.rowMenu ? (
-                              <Link to={`${routers.PRODUCTS}/${elementInner.link.toLowerCase()}`}>
+                              <Link
+                                to={`${
+                                  routers.PRODUCTS
+                                }/${elementInner.link.toLowerCase()}`}
+                              >
                                 <span
                                   className={`main-header__submenu-icon icon-${
                                     indexInner + 1
                                   }`}
                                 ></span>
                                 <span className="main-header__submenu-label">
-                                  {elementInner.title }
+                                  {elementInner.title}
                                 </span>
                               </Link>
                             ) : (
@@ -59,9 +62,9 @@ const Header: React.FC<Props> = (props: Props) => {
               );
             })}
           </ul>
-          <a href="#" className="cart-link">
+          <Link to={`${routers.BASKET}`} className="cart-link">
             <span className="cart-link__counter">12</span>
-          </a>
+          </Link>
           <button className="menu-btn" aria-label="Menu"></button>
         </div>
       </div>

@@ -55,6 +55,26 @@
             "lmm": "42",
             "pack": 1250,
             "price": 14.76
+          },
+          {
+            "id": "21y1",
+            "article": "FOR-RK-4.2X42 BA",
+            "description": "Wood screw with Ruspert coating 4.2x42mm Al white",
+            "src": "/img/content/category/category-1.jpg",
+            "mm": "4,5",
+            "lmm": "42",
+            "pack": 1250,
+            "price": 14.76
+          },
+          {
+            "id": "3yt",
+            "article": "FOR-RK-4.2X42 A",
+            "description": "Wood screw with Ruspert coating 4.2x42mm Al white",
+            "src": "/img/content/category/category-2.jpg",
+            "mm": "4,5",
+            "lmm": "42",
+            "pack": 1250,
+            "price": 14.76
           }
         ]
       },

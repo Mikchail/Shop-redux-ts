@@ -1,6 +1,7 @@
 
 export const routers = {
   CONTACTS: '/contacts',
+  BASKET: '/basket',
   PRODUCTS: '/products',
   ABOUTUS: '/about-us',
   FASTENERS: '/fasteners',

@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {getProducts} from "../../store/product/selectors";
 import {fetchItems} from "../../actions/products";
 import {ProductTypes} from "../../types/types-products";
+import { routers } from './../../const/const';
 
 
 interface Products {
@@ -30,7 +31,7 @@ const ProductListAndItem = (props: Props) => {
             products.map((product) => {
               return (
                 <li key={product.id} className="products__item">
-                  <Link to={product.link} className="products__link">
+                  <Link to={`${routers.PRODUCTS}/${product.link}`} className="products__link">
                     <span className="products__thumb">
                       <img src={product.src} alt={product.title} />
                     </span>
