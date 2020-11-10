@@ -1,60 +1,60 @@
 import * as React from "react";
+import ShoppingItem from "./../shopping-item/shopping-item";
+import Breadcrumbs from './../breadcrumbs/breadcrumbs';
 
+// const products = [1, 2, 3, 4, 5, 6, 7];
+const products = [];
 const Basket = () => {
+  const isEmpty = products && Boolean(products.length)
+  
   return (
     <React.Fragment>
+      <Breadcrumbs/>
+      <div className="page-title">
+            <div className="container-fluid">
+                <div className="page-title__content">
+                    <h1 className="page-title__text">Shopping bag</h1>
+                </div>
+            </div>
+        </div>
       <div className="shopping">
-        <div className="container-fluid">
-          <div className="shopping__content">
-            <ul className="shopping__header">
-              <li>ARTICLE</li>
-              <li>DESCRIPTION</li>
-              <li>PACK</li>
-              <li>QUANTITY</li>
-              <li>PRICE</li>
-              <li>DELETE</li>
-            </ul>
+        {isEmpty && (
+          <div className="container-fluid">
+            <div className="shopping__content">
+              <ul className="shopping__header">
+                <li>ARTICLE</li>
+                <li>DESCRIPTION</li>
+                <li>PACK</li>
+                <li>QUANTITY</li>
+                <li>PRICE</li>
+                <li>DELETE</li>
+              </ul>
 
-            <div className="shopping__list">
-              <ul className="shopping__item">
-                <li>DIN 316</li>
-                <li>WING SCREWS, M4X10, ZN</li>
-                <li>100</li>
-                <li>
-                  <input type="number" className="quantity" value="100" />
-                </li>
-                <li>1500$</li>
-                <li>
-                  <button type="button" className="remove-cart"></button>
-                </li>
-              </ul>
-              <ul className="shopping__item">
-                <li>DIN 316</li>
-                <li>WING SCREWS, M4X10, ZN</li>
-                <li>100</li>
-                <li>
-                  <input type="number" className="quantity" value="1000" />
-                </li>
-                <li>1500$</li>
-                <li>
-                  <button type="button" className="remove-cart"></button>
-                </li>
-              </ul>
-              <ul className="shopping__item">
-                <li>DIN 316</li>
-                <li>WING SCREWS, M4X25, ZN</li>
-                <li>100</li>
-                <li>
-                  <input type="number" className="quantity" value="10000" />
-                </li>
-                <li>1500$</li>
-                <li>
-                  <button type="button" className="remove-cart"></button>
-                </li>
-              </ul>
+              <div className="shopping__list">
+                {products.map((item, index) => {
+                  return <ShoppingItem key={item} />;
+                })}
+              </div>
             </div>
           </div>
+        )}
+
+        {
+          !isEmpty && (
+            <div className="page-content">
+            <div className="meta-page">
+                <div className="container-fluid">
+                    <div className="meta-page__content">
+                        <h1 className="meta-page__title">Your basket is empty</h1>
+                        <br/>
+                                      
+                        <a href="/en/products/" className="meta-page__btn btn btn_no-bg">CONTINUE SHOPPING</a>
+                    </div>
+                </div>
+            </div>
         </div>
+          )
+        }
       </div>
       <div className="contacts-form">
         <div className="container-fluid">

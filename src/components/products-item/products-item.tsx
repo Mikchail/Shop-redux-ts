@@ -1,10 +1,15 @@
 import * as React from "react";
+
 import {InnerItem} from "../../types/types-products";
+import {addProductsToBasket} from "./../../actions/products";
+import {connect} from "react-redux";
 interface Props {
   item: InnerItem;
+  addToBasket: (item) => {};
 }
 const ProductsItem: React.FC<Props> = (props: Props) => {
-  const {article, description, src, mm, lmm, pack, price, id} = props.item;
+  const {addToBasket, item} = props;
+  const {article, description, src, mm, lmm, pack, price, id} = item;
   return (
     <ul className="product__item">
       <li>{article}</li>
@@ -17,10 +22,18 @@ const ProductsItem: React.FC<Props> = (props: Props) => {
       </li>
       <li data-title="Price:">{price}$</li>
       <li>
-        <button type="button" className="add-cart"></button>
+        <button
+          onClick={() => addToBasket(item)}
+          type="button"
+          className="add-cart"
+        ></button>
       </li>
     </ul>
   );
 };
-
-export default ProductsItem;
+const mapDispatchToProps = (dispatch) => ({
+  addToBasket: (item) => {
+    dispatch(addProductsToBasket(item));
+  }
+});
+export default connect(null, mapDispatchToProps)(ProductsItem);
