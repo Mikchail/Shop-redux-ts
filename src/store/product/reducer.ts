@@ -53,8 +53,6 @@ function updateBasketItem(item, itemInBasket, amount) {
 }
 
 function updateBasket(state, product, amount) {
-  console.log(product);
-  const id = 2;
   // const item = state.products.find((good) => good.id === id);
   const index = state.basket.findIndex((b) => b.id === product.id);
   const itemInBasket = state.basket[index];

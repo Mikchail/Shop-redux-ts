@@ -1,22 +1,28 @@
 import * as React from "react";
 import ShoppingItem from "./../shopping-item/shopping-item";
-import Breadcrumbs from './../breadcrumbs/breadcrumbs';
+import Breadcrumbs from "./../breadcrumbs/breadcrumbs";
+import {BasketItem} from "./../../types/types-products";
+import { connect } from 'react-redux';
+import { getBasket } from '../../store/product/selectors';
 
-// const products = [1, 2, 3, 4, 5, 6, 7];
-const products = [];
-const Basket = () => {
-  const isEmpty = products && Boolean(products.length)
-  
+interface Props {
+  basket: Array<BasketItem>;
+}
+
+const Basket: React.FC<Props> = (props: Props) => {
+  const {basket} = props;
+  const isEmpty = basket && Boolean(basket.length);
+  console.log(basket)
   return (
     <React.Fragment>
-      <Breadcrumbs/>
+      <Breadcrumbs />
       <div className="page-title">
-            <div className="container-fluid">
-                <div className="page-title__content">
-                    <h1 className="page-title__text">Shopping bag</h1>
-                </div>
-            </div>
+        <div className="container-fluid">
+          <div className="page-title__content">
+            <h1 className="page-title__text">Shopping bag</h1>
+          </div>
         </div>
+      </div>
       <div className="shopping">
         {isEmpty && (
           <div className="container-fluid">
@@ -31,30 +37,33 @@ const Basket = () => {
               </ul>
 
               <div className="shopping__list">
-                {products.map((item, index) => {
-                  return <ShoppingItem key={item} />;
+                {basket.map((item, index) => {
+                  return <ShoppingItem key={item.id} item={item}  />;
                 })}
               </div>
             </div>
           </div>
         )}
 
-        {
-          !isEmpty && (
-            <div className="page-content">
+        {!isEmpty && (
+          <div className="page-content">
             <div className="meta-page">
-                <div className="container-fluid">
-                    <div className="meta-page__content">
-                        <h1 className="meta-page__title">Your basket is empty</h1>
-                        <br/>
-                                      
-                        <a href="/en/products/" className="meta-page__btn btn btn_no-bg">CONTINUE SHOPPING</a>
-                    </div>
+              <div className="container-fluid">
+                <div className="meta-page__content">
+                  <h1 className="meta-page__title">Your basket is empty</h1>
+                  <br />
+
+                  <a
+                    href="/en/products/"
+                    className="meta-page__btn btn btn_no-bg"
+                  >
+                    CONTINUE SHOPPING
+                  </a>
                 </div>
+              </div>
             </div>
-        </div>
-          )
-        }
+          </div>
+        )}
       </div>
       <div className="contacts-form">
         <div className="container-fluid">
@@ -125,8 +134,11 @@ const Basket = () => {
     </React.Fragment>
   );
 };
-
-export default Basket;
+const mapStateToProps = (state) => ({
+  basket: getBasket(state)
+})
+export  {Basket};
+export default connect(mapStateToProps)(Basket);
 
 {
   /* 

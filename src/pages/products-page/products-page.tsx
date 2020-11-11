@@ -45,7 +45,7 @@ const ProductsPage: React.FC<Props> = (props: Props) => {
       </div>
       <div className="page-content">
         <FormSearch className={`search_page`} />
-        <ProductsList items={items} />
+        <ProductsList title={title} items={items} />
       </div>
     </React.Fragment>
   );

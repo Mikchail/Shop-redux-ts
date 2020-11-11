@@ -1,0 +1,1123 @@
+[
+  {
+     "id":"0ce433c8e54c5",
+     "name":"screws",
+     "title":"screws",
+     "src":"./img/content/main-page/dlv1.jpg",
+     "article":"SCREWS RUSPERT",
+     "srcMini":"/img/content/category/category-1.jpg",
+     "link":"screws",
+     "price":200.99,
+     "items":[
+        {
+           "id":"006a6335e6a7c",
+           "title":"SCREWS RUSPERT",
+           "article":"SCREWS RUSPERT",
+           "link":"screws",
+           "src":"/img/content/category/category-1.jpg",
+           "items":[
+              {
+                 "id":"c03301997aae4",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"e10e0a42ae11e",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"70315aa21883b",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"fa85a2d775756",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"a8e8f644b896a",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"e815f174f119f",
+                 "article":"FOR-RK-4.2X42 A",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-2.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        },
+        {
+           "id":"a17dc3c301c96",
+           "src":"/img/content/category/category-2.jpg",
+           "title":"TIMBER SCREW COUNTERSUNK HEAD",
+           "link":"timber",
+           "items":[
+              {
+                 "id":"322f8cf68f35b",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"2189ad65b757e",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"7c52bedfe92d2",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"bfca85c423711",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        },
+        {
+           "id":"ecc89a5ea1814",
+           "title":"WING SCREW",
+           "link":"wing_screw",
+           "src":"/img/content/category/category-5.jpg",
+           "items":[
+              {
+                 "id":"e6e4956bcd469",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"fd0c3dee406fe",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "src":"/img/content/category/category-2.jpg",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"ee29e5eb82814",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-5.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"a702b1684ec18",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "src":"/img/content/category/category-1.jpg",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        }
+     ]
+  },
+  {
+     "id":"8613c99e71734",
+     "name":"Nuts and washers",
+     "title":"Nuts and washers",
+     "src":"./img/content/main-page/dlv2.jpg",
+     "link":"nuts_and_washers",
+     "article":"SCREWS RUSPERT",
+     "srcMini":"/img/content/category/category-1.jpg",
+     "price":200.99,
+     "items":[
+        {
+           "id":"c4099fca31ef2",
+           "title":"SCREWS RUSPERT",
+           "article":"SCREWS RUSPERT",
+           "link":"screws",
+           "src":"/img/content/category/category-1.jpg",
+           "items":[
+              {
+                 "id":"1fd190bb97cfa",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"f259a65303899",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"09aa93c845a7b",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"6ea7952aa9ba9",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        },
+        {
+           "id":"388396bf1d478",
+           "src":"/img/content/category/category-2.jpg",
+           "title":"TIMBER SCREW COUNTERSUNK HEAD",
+           "link":"timber",
+           "items":[
+              {
+                 "id":"0c6fc6b497dc7",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"489f60f8e655",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"c75e65075dc24",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"c2fcce9a7b196",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        },
+        {
+           "id":"013682092856e",
+           "title":"WING SCREW",
+           "link":"wing_screw",
+           "src":"/img/content/category/category-5.jpg",
+           "items":[
+              {
+                 "id":"79ff87746b54",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"c3908976b360e",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "src":"/img/content/category/category-2.jpg",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"24c4193d56947",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-5.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"b09be0af9e068",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "src":"/img/content/category/category-1.jpg",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        }
+     ]
+  },
+  {
+     "id":"cf35e2b6d4a24",
+     "name":"Fasteners",
+     "title":"Fasteners",
+     "src":"./img/content/main-page/dlv3.jpg",
+     "link":"fasteners",
+     "article":"SCREWS RUSPERT",
+     "srcMini":"/img/content/category/category-1.jpg",
+     "price":200.99,
+     "items":[
+        {
+           "id":"2947acadd322a",
+           "title":"SCREWS RUSPERT",
+           "article":"SCREWS RUSPERT",
+           "link":"screws",
+           "src":"/img/content/category/category-1.jpg",
+           "items":[
+              {
+                 "id":"8a4002d8647fe",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"afc864199f379",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"abd5571cba466",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"b3832b6f3c349",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        },
+        {
+           "id":"a1247172e402",
+           "src":"/img/content/category/category-2.jpg",
+           "title":"TIMBER SCREW COUNTERSUNK HEAD",
+           "link":"timber",
+           "items":[
+              {
+                 "id":"d5e15f8e8c19d",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"4d22abefdb728",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"3e679bfa59d71",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"67cbc6291d9f2",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        },
+        {
+           "id":"2a04aae751b7f",
+           "title":"WING SCREW",
+           "link":"wing_screw",
+           "src":"/img/content/category/category-5.jpg",
+           "items":[
+              {
+                 "id":"aa22c3cfdb13d",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"1d35273a261c5",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "src":"/img/content/category/category-2.jpg",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"b63c8202567af",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-5.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"4b4a77c0870ea",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "src":"/img/content/category/category-1.jpg",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        }
+     ]
+  },
+  {
+     "id":"494aa568785c",
+     "name":"Technical aerosols",
+     "title":"Technical aerosols",
+     "src":"./img/content/main-page/dlv4.jpg",
+     "link":"technical_aerosols",
+     "article":"SCREWS RUSPERT",
+     "srcMini":"/img/content/category/category-1.jpg",
+     "price":200.99,
+     "items":[
+        {
+           "id":"783e80f47ca69",
+           "title":"SCREWS RUSPERT",
+           "article":"SCREWS RUSPERT",
+           "link":"screws",
+           "src":"/img/content/category/category-1.jpg",
+           "items":[
+              {
+                 "id":"06429e6e6d46a",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"f400ab14f9156",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"5595a94fafca5",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"2846a913a7f72",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        },
+        {
+           "id":"1ce35ac260c8f",
+           "src":"/img/content/category/category-2.jpg",
+           "title":"TIMBER SCREW COUNTERSUNK HEAD",
+           "link":"timber",
+           "items":[
+              {
+                 "id":"2e8ebc3456ab6",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"9f056b5ad1292",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"c2b680e67a1ed",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"b801dbcb643d3",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        },
+        {
+           "id":"05c51afee4f94",
+           "title":"WING SCREW",
+           "link":"wing_screw",
+           "src":"/img/content/category/category-5.jpg",
+           "items":[
+              {
+                 "id":"32dc2b1e31699",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"9f17ff501daa6",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "src":"/img/content/category/category-2.jpg",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"67e3bf94507a3",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-5.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"b3400a97686c6",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "src":"/img/content/category/category-1.jpg",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        }
+     ]
+  },
+  {
+     "id":"967e4a85bb2bf",
+     "name":"Industrial paper",
+     "title":"Industrial paper",
+     "src":"./img/content/main-page/dlv5.jpg",
+     "link":"industrial_paper",
+     "article":"SCREWS RUSPERT",
+     "srcMini":"/img/content/category/category-1.jpg",
+     "price":200.99,
+     "items":[
+        {
+           "id":"3058d22acd01",
+           "title":"SCREWS RUSPERT",
+           "article":"SCREWS RUSPERT",
+           "link":"screws",
+           "src":"/img/content/category/category-1.jpg",
+           "items":[
+              {
+                 "id":"e0ba288d39c67",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"22d58fe46e3a1",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"ccffdc1d20349",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"0cd56fc5fe963",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        },
+        {
+           "id":"a3a99cc7069e1",
+           "src":"/img/content/category/category-2.jpg",
+           "title":"TIMBER SCREW COUNTERSUNK HEAD",
+           "link":"timber",
+           "items":[
+              {
+                 "id":"a8a4b60fb0253",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"91ccfd3583a4a",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"1755625c7a6be",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"78a29ffc7687b",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        },
+        {
+           "id":"1fafbee0b0e94",
+           "title":"WING SCREW",
+           "link":"wing_screw",
+           "src":"/img/content/category/category-5.jpg",
+           "items":[
+              {
+                 "id":"cfaf755144cf9",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"b93c7ed279baa",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "src":"/img/content/category/category-2.jpg",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"3ae97c98f498f",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-5.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"d9d096b40baa3",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "src":"/img/content/category/category-1.jpg",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        }
+     ]
+  },
+  {
+     "id":"30c131a7f1544",
+     "name":"Work gloves",
+     "title":"Work gloves",
+     "src":"./img/content/main-page/dlv6.jpg",
+     "link":"work_gloves",
+     "article":"SCREWS RUSPERT",
+     "srcMini":"/img/content/category/category-1.jpg",
+     "price":200.99,
+     "items":[
+        {
+           "id":"41052f5029f98",
+           "title":"SCREWS RUSPERT",
+           "article":"SCREWS RUSPERT",
+           "link":"screws",
+           "src":"/img/content/category/category-1.jpg",
+           "items":[
+              {
+                 "id":"4401d46b8be4d",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"d88167bb0b3c2",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"d17f549bff527",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"54ea50ba28cea",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        },
+        {
+           "id":"0e82fd162f77d",
+           "src":"/img/content/category/category-2.jpg",
+           "title":"TIMBER SCREW COUNTERSUNK HEAD",
+           "link":"timber",
+           "items":[
+              {
+                 "id":"e6ec657909cbc",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"b73ee6bea015b",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"430f1825bb664",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"a0597aa8d1fc7",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        },
+        {
+           "id":"8ee832db7c43a",
+           "title":"WING SCREW",
+           "link":"wing_screw",
+           "src":"/img/content/category/category-5.jpg",
+           "items":[
+              {
+                 "id":"673d449318373",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"bf6a3ead7e782",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "src":"/img/content/category/category-2.jpg",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"af9ab8ef9b5da",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-5.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"dfc74f9e6f831",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "src":"/img/content/category/category-1.jpg",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        }
+     ]
+  },
+  {
+     "id":"8cde93f906b92",
+     "name":"Ndustrial paper",
+     "title":"Ndustrial paper",
+     "src":"./img/content/main-page/dlv6.jpg",
+     "link":"ndustrial_paper",
+     "article":"SCREWS RUSPERT",
+     "srcMini":"/img/content/category/category-1.jpg",
+     "price":200.99,
+     "items":[
+        {
+           "id":"13334880557a9",
+           "title":"SCREWS RUSPERT",
+           "article":"SCREWS RUSPERT",
+           "link":"screws",
+           "src":"/img/content/category/category-1.jpg",
+           "items":[
+              {
+                 "id":"d4627e971fd43",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"1e1fafb29df47",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"b6d4d6f952c5c",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"55cceffa0f85f",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        },
+        {
+           "id":"1ecc53fba836c",
+           "src":"/img/content/category/category-2.jpg",
+           "title":"TIMBER SCREW COUNTERSUNK HEAD",
+           "link":"timber",
+           "items":[
+              {
+                 "id":"b0ba2bf77564e",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"2c1d30a2a4882",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"fbe573259b1b1",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"b0af1eceae6d1",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        },
+        {
+           "id":"52e648335800a",
+           "title":"WING SCREW",
+           "link":"wing_screw",
+           "src":"/img/content/category/category-5.jpg",
+           "items":[
+              {
+                 "id":"511eab66af195",
+                 "article":"FOR-RK-4.X2422 BA",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-1.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"2e47945b7eedc",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "src":"/img/content/category/category-2.jpg",
+                 "description":"screw with Ruspert coating 4.2x42mm Al white",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1150,
+                 "price":14.76
+              },
+              {
+                 "id":"09636eec74dce",
+                 "article":"FOR-RK-4.2X42 BA",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "src":"/img/content/category/category-5.jpg",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              },
+              {
+                 "id":"f6ba55a33d79",
+                 "article":"FOR-RK-4.2X42 BaA",
+                 "src":"/img/content/category/category-1.jpg",
+                 "description":"Wood screw with Ruspert coating 4.2x42mm Al white",
+                 "mm":"4,5",
+                 "lmm":"42",
+                 "pack":1250,
+                 "price":14.76
+              }
+           ]
+        }
+     ]
+  }
+
+ 
+]

@@ -5,6 +5,7 @@ import {addProductsToBasket} from "./../../actions/products";
 import {connect} from "react-redux";
 interface Props {
   item: InnerItem;
+  title: string
   addToBasket: (item) => {};
 }
 const ProductsItem: React.FC<Props> = (props: Props) => {

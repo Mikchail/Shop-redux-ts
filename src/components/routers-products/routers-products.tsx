@@ -28,11 +28,11 @@ const RoutersOfProducts: React.FC<Props> = (props: Props) => {
                 const id = routerProps.match.params.id;
                 const match = routerProps.match;
                 if (title) {
-                  let child = product.parent.find((it) => it.link === title);
+                  let child = product.items.find((it) => it.link === title);
                   return <ProductsPage title={child.title} srcImg={child.src} match={match} items={child.items} />;
                 } else if (title && id) {
                 }
-                return <CategoryPage match={match} title={product.title} items={product.parent}  />;
+                return <CategoryPage match={match} title={product.title} items={product.items}  />;
               }}
             />
           );

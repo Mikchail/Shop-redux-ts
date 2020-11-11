@@ -1,19 +1,21 @@
-export interface InnerItem {
+export interface Item {
+  src: string;
+  id: string;
+}
+
+
+
+export interface InnerItem extends Item {
   article: string;
   description: string;
-  src: string;
   mm: string;
   lmm: string;
   pack: number;
   price: number;
-  id: string;
   parent: string;
 }
 
-export interface CategoryItemTypes {
-  parent: string;
-  id: string;
-  src: string;
+export interface CategoryItemTypes extends Item  {
   srcMini: string;
   article: string;
   title: string;
@@ -22,13 +24,17 @@ export interface CategoryItemTypes {
   items?: Array<InnerItem>;
 }
 
-export interface ProductTypes {
-  parent?: Array<CategoryItemTypes>;
-  id: string;
-  src: string;
+export interface ProductTypes extends Item  {
+  items?: Array<CategoryItemTypes>;
   srcMini: string;
   article: string;
   title: string;
   name: string;
   link: string;
+}
+
+
+export interface BasketItem extends InnerItem {
+  total: number;
+  count: number;
 }

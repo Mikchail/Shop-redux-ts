@@ -1,13 +1,18 @@
 import * as React from "react";
 import {Link} from "react-router-dom";
+import {getBasket} from "../../store/product/selectors";
 import {menu} from "../../mocks/menu-mock";
 import {routers} from "./../../const/const";
+import {connect} from "react-redux";
+import {BasketItem} from "./../../types/types-products";
 
 type Props = {
   title?: string;
+  basket: Array<BasketItem>;
 };
 
 const Header: React.FC<Props> = (props: Props) => {
+  const {basket} = props;
   return (
     <header className="main-header">
       <div className="container-fluid">
@@ -63,7 +68,9 @@ const Header: React.FC<Props> = (props: Props) => {
             })}
           </ul>
           <Link to={`${routers.BASKET}`} className="cart-link">
-            <span className="cart-link__counter">12</span>
+            {!!basket.length && (
+              <span className="cart-link__counter">{basket.length}</span>
+            )}
           </Link>
           <button className="menu-btn" aria-label="Menu"></button>
         </div>
@@ -71,5 +78,8 @@ const Header: React.FC<Props> = (props: Props) => {
     </header>
   );
 };
-
-export default Header;
+const mapStateToProps = (state) => ({
+  basket: getBasket(state),
+});
+export {Header};
+export default connect(mapStateToProps)(Header);

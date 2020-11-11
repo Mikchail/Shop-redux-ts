@@ -29,7 +29,24 @@ export const removeProductsFromBasket = (items: any): removeProductsFromBasket =
 
 export const fetchItems = () => async (dispatch: Dispatch, _getState, api) => {
 
-  const items = await api.get("products.json").then((res) => res.data);
-
+  const items = await api.get("prod.json").then((res) => res.data);
   dispatch(setItems(items));
 };
+
+
+function changeId(tharr){
+  if(!tharr) return
+  return tharr.map((it,index)=>{
+    return {...it, id: Math.random().toString(16).slice(2) , items: changeId(it.items)}
+  })
+}
+
+// function changeItems(items){
+//   return items.map((it)=>{
+//     return it.parent.map((paren)=>{
+//       return paren.items.map((its)=>{
+//         return {...its,id: Math.random().toString(16).slice(2) }
+//       })
+//     })
+//   })
+// }

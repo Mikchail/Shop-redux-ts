@@ -13,13 +13,16 @@ import ProductListAndItem from "./../products/products";
 import ProductsList from "../products-list/products-list";
 import RoutersOfProducts from "../routers-products/routers-products";
 import {fetchItems} from "./../../actions/products";
-import {getProducts} from "./../../store/product/selectors";
+import {getProducts,getBasket} from "./../../store/product/selectors";
 import {connect} from "react-redux";
 import {ProductTypes} from "../../types/types-products";
 import BasketPage from './../../pages/basket-page/basket-page';
 
+
+
 interface Props {
   loadProduct: () => void;
+  
   products: Array<ProductTypes>;
 }
 
@@ -57,6 +60,7 @@ const App: React.FC<Props> = (props: Props) => {
 };
 const mapStateToProps = (state) => ({
   products: getProducts(state),
+ 
 });
 const mapDispatchToProps = (dispatch) => ({
   loadProduct: () => {
