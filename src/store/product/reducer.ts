@@ -9,6 +9,7 @@ import {
   ADD_PRODUCT_TO_BASKET,
   REMOVE_PRODUCTS_FROM_BASKET,
 } from "./../../types/action-types";
+import {BasketItem} from "../../types/types-products";
 type StateProduct = {
   products: [];
   basket: [];
@@ -36,7 +37,9 @@ function updateBasketItems(basket, item, index) {
 }
 
 function updateBasketItem(item, itemInBasket, amount) {
+
   if (itemInBasket) {
+    
     return {
       ...itemInBasket,
       count: itemInBasket.count + amount,
@@ -74,11 +77,15 @@ export const reducer = (
     case LOAD_PRODUCT:
       return {...state, products: action.payload};
     case ADD_PRODUCT_TO_BASKET:
-      return updateBasket(state, action.payload, +1);
+      const {item,amount} = action.payload 
+      console.log(item,amount);
+      
+      return updateBasket(state, item, +amount);
     case REMOVE_PRODUCTS_FROM_BASKET:
-      const item = state.basket.find(({id}) => id === action.payload);
+      const itemOfBasket:BasketItem = state.basket.find(({id}) => id === action.payload);
       // item.count
-      return updateBasket(state, action.payload, -1);
+      
+      return updateBasket(state, itemOfBasket, -itemOfBasket.count);
     default:
       return state;
   }

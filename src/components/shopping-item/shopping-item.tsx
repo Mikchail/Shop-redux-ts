@@ -1,23 +1,28 @@
 import * as React from "react";
-import { BasketItem } from './../../types/types-products';
+import {BasketItem} from "./../../types/types-products";
 interface Props {
-  item: BasketItem
+  item: BasketItem;
+  handlerDeleteFromBasket: (id: string | number) => void;
 }
 const ShoppingItem: React.FC<Props> = (props: Props) => {
-  const {item} = props;
-  const {article,description,total,id,price,pack} = item
-  console.log(item)
+  const {item, handlerDeleteFromBasket} = props;
+  const {article, description, total, id, price, pack,count} = item;
+  console.log(item);
   return (
     <ul className="shopping__item">
       <li>{article}</li>
       <li>{description}</li>
       <li>{pack}</li>
       <li>
-        <input type="number" className="quantity" value="100" />
+        <input type="number" className="quantity" defaultValue={count} disabled />
       </li>
-      <li>{total}$</li>
+      <li>{total.toFixed(1)}$</li>
       <li>
-        <button type="button" className="remove-cart"></button>
+        <button
+          onClick={() => handlerDeleteFromBasket(id)}
+          type="button"
+          className="remove-cart"
+        ></button>
       </li>
     </ul>
   );

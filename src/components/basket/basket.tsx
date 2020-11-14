@@ -2,17 +2,19 @@ import * as React from "react";
 import ShoppingItem from "./../shopping-item/shopping-item";
 import Breadcrumbs from "./../breadcrumbs/breadcrumbs";
 import {BasketItem} from "./../../types/types-products";
-import { connect } from 'react-redux';
-import { getBasket } from '../../store/product/selectors';
+import {connect} from "react-redux";
+import {getBasket} from "../../store/product/selectors";
+import {Dispatch} from "redux";
+import {removeProductsFromBasket} from "./../../actions/products";
 
 interface Props {
   basket: Array<BasketItem>;
+  handlerDeleteFromBasket: () => void;
 }
 
 const Basket: React.FC<Props> = (props: Props) => {
-  const {basket} = props;
+  const {basket, handlerDeleteFromBasket} = props;
   const isEmpty = basket && Boolean(basket.length);
-  console.log(basket)
   return (
     <React.Fragment>
       <Breadcrumbs />
@@ -38,7 +40,13 @@ const Basket: React.FC<Props> = (props: Props) => {
 
               <div className="shopping__list">
                 {basket.map((item, index) => {
-                  return <ShoppingItem key={item.id} item={item}  />;
+                  return (
+                    <ShoppingItem
+                      key={item.id}
+                      handlerDeleteFromBasket={handlerDeleteFromBasket}
+                      item={item}
+                    />
+                  );
                 })}
               </div>
             </div>
@@ -135,10 +143,15 @@ const Basket: React.FC<Props> = (props: Props) => {
   );
 };
 const mapStateToProps = (state) => ({
-  basket: getBasket(state)
-})
-export  {Basket};
-export default connect(mapStateToProps)(Basket);
+  basket: getBasket(state),
+});
+const mapDispatchToProps = (dispatch) => ({
+  handlerDeleteFromBasket: (id) => {
+    dispatch(removeProductsFromBasket(id));
+  },
+});
+export {Basket};
+export default connect(mapStateToProps, mapDispatchToProps)(Basket);
 
 {
   /* 
