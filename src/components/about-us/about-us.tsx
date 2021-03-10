@@ -21,7 +21,6 @@ interface Props {
 
 const AboutUs = (props: Props) => {
   const {aboutUs, loadAboutUs} = props;
-  console.log(aboutUs);
 
   React.useEffect(() => {
     loadAboutUs();

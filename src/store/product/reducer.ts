@@ -3,13 +3,13 @@ import {
   addProductsToBasket,
   removeProductsFromBasket,
 } from "../../actions/products";
-import {extend} from "../../utils";
+import { extend } from "../../utils";
 import {
   LOAD_PRODUCT,
   ADD_PRODUCT_TO_BASKET,
   REMOVE_PRODUCTS_FROM_BASKET,
 } from "./../../types/action-types";
-import {BasketItem} from "../../types/types-products";
+import { BasketItem } from "../../types/types-products";
 type StateProduct = {
   products: [];
   basket: [];
@@ -39,7 +39,7 @@ function updateBasketItems(basket, item, index) {
 function updateBasketItem(item, itemInBasket, amount) {
 
   if (itemInBasket) {
-    
+
     return {
       ...itemInBasket,
       count: itemInBasket.count + amount,
@@ -75,16 +75,14 @@ export const reducer = (
 ): StateProduct => {
   switch (action.type) {
     case LOAD_PRODUCT:
-      return {...state, products: action.payload};
+      return { ...state, products: action.payload };
     case ADD_PRODUCT_TO_BASKET:
-      const {item,amount} = action.payload 
-      console.log(item,amount);
-      
+      const { item, amount } = action.payload
       return updateBasket(state, item, +amount);
     case REMOVE_PRODUCTS_FROM_BASKET:
-      const itemOfBasket:BasketItem = state.basket.find(({id}) => id === action.payload);
+      const itemOfBasket: BasketItem = state.basket.find(({ id }) => id === action.payload);
       // item.count
-      
+
       return updateBasket(state, itemOfBasket, -itemOfBasket.count);
     default:
       return state;

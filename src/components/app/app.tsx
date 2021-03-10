@@ -45,7 +45,7 @@ const App: React.FC<Props> = (props: Props) => {
         <Route exact path={`${routers.PRODUCTS}`}>
           <ProductListAndItem products={products} />
         </Route>
-        <Route exact path={`${routers.BASKET}`}>
+        <Route path={`${routers.BASKET}`}>
           <BasketPage/>
         </Route>
         <RoutersOfProducts products={products}/>

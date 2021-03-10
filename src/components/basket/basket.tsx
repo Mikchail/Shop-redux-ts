@@ -1,11 +1,14 @@
 import * as React from "react";
 import ShoppingItem from "./../shopping-item/shopping-item";
 import Breadcrumbs from "./../breadcrumbs/breadcrumbs";
-import {BasketItem} from "./../../types/types-products";
-import {connect} from "react-redux";
-import {getBasket} from "../../store/product/selectors";
-import {Dispatch} from "redux";
-import {removeProductsFromBasket} from "./../../actions/products";
+import { BasketItem } from "./../../types/types-products";
+import { connect } from "react-redux";
+import { getBasket } from "../../store/product/selectors";
+import { Dispatch } from "redux";
+import { removeProductsFromBasket } from "./../../actions/products";
+import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
+import FormContact from "../form-contact/form-contact";
+import { IFormValues } from "types/types";
 
 interface Props {
   basket: Array<BasketItem>;
@@ -13,11 +16,75 @@ interface Props {
 }
 
 const Basket: React.FC<Props> = (props: Props) => {
-  const {basket, handlerDeleteFromBasket} = props;
+  const { basket, handlerDeleteFromBasket } = props;
   const isEmpty = basket && Boolean(basket.length);
-  return (
-    <React.Fragment>
-      <Breadcrumbs />
+  const routeMatch = useRouteMatch();
+  console.log(routeMatch);
+
+  const renderList = () => {
+    return (
+      <div className="shopping__list">
+        {basket.map((item, index) => {
+          return (
+            <ShoppingItem
+              key={item.id}
+              handlerDeleteFromBasket={handlerDeleteFromBasket}
+              item={item}
+            />
+          );
+        })}
+      </div>
+    )
+  }
+  const renderProducts = () => {
+    if (!isEmpty) {
+      return null;
+    }
+    return (
+      <div className="container-fluid">
+        <div className="shopping__content">
+          <ul className="shopping__header">
+            <li>ARTICLE</li>
+            <li>DESCRIPTION</li>
+            <li>PACK</li>
+            <li>QUANTITY</li>
+            <li>PRICE</li>
+            <li>DELETE</li>
+          </ul>
+          {renderList()}
+        </div>
+        <Link className="form__btn btn btn_no-bg" style={{ margin: "auto", display: "flex", alignItems: "center", width: 300 }} to={`${routeMatch.path}/step-two`}>
+          step two
+        </Link>
+      </div>
+    )
+  }
+  const renderEmpty = (): JSX.Element | null => {
+    if (isEmpty) {
+      return null;
+    }
+    return (
+      <div className="page-content">
+        <div className="meta-page">
+          <div className="container-fluid">
+            <div className="meta-page__content">
+              <h1 className="meta-page__title">Your basket is empty</h1>
+              <br />
+              <Link
+                to="/"
+                className="meta-page__btn btn btn_no-bg"
+              >
+                CONTINUE SHOPPING
+                </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  const renderTitle = () => {
+    return (
       <div className="page-title">
         <div className="container-fluid">
           <div className="page-title__content">
@@ -25,132 +92,43 @@ const Basket: React.FC<Props> = (props: Props) => {
           </div>
         </div>
       </div>
+    )
+  }
+
+  const submit = (values: IFormValues) => {
+    console.log({...values,basket});
+  }
+
+  return (
+    <React.Fragment>
+      <Breadcrumbs />
+      {renderTitle()}
       <div className="shopping">
-        {isEmpty && (
-          <div className="container-fluid">
-            <div className="shopping__content">
-              <ul className="shopping__header">
-                <li>ARTICLE</li>
-                <li>DESCRIPTION</li>
-                <li>PACK</li>
-                <li>QUANTITY</li>
-                <li>PRICE</li>
-                <li>DELETE</li>
-              </ul>
+        {renderProducts()}
+        {renderEmpty()}
 
-              <div className="shopping__list">
-                {basket.map((item, index) => {
-                  return (
-                    <ShoppingItem
-                      key={item.id}
-                      handlerDeleteFromBasket={handlerDeleteFromBasket}
-                      item={item}
-                    />
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        )}
-
-        {!isEmpty && (
-          <div className="page-content">
-            <div className="meta-page">
-              <div className="container-fluid">
-                <div className="meta-page__content">
-                  <h1 className="meta-page__title">Your basket is empty</h1>
-                  <br />
-
-                  <a
-                    href="/en/products/"
-                    className="meta-page__btn btn btn_no-bg"
-                  >
-                    CONTINUE SHOPPING
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
-      <div className="contacts-form">
-        <div className="container-fluid">
-          <form action="/" className="form">
-            <div className="form__inner">
-              <h2 className="form__title">CUSTOMER DATA</h2>
-              <div className="form__content">
-                <div className="form__column">
-                  <input
-                    type="text"
-                    name="Company name"
-                    placeholder="Company name *"
-                    className="form__field"
-                  />
-                  <input
-                    type="text"
-                    name="Contact person"
-                    placeholder="Contact person *"
-                    className="form__field error"
-                  />
-                  <input
-                    type="text"
-                    name="Phone"
-                    placeholder="Phone *"
-                    className="form__field"
-                  />
-                  <input
-                    type="email"
-                    name="Email"
-                    placeholder="Email address *"
-                    className="form__field"
-                    required
-                  />
-                </div>
-                <div className="form__column">
-                  <textarea
-                    name="Message"
-                    placeholder="Comment"
-                    className="form__field"
-                  ></textarea>
-                </div>
-              </div>
-              <div className="form__footer">
-                <div className="form__error">Enter a contact person</div>
-              </div>
-            </div>
-            <div className="form__btn-box">
-              <div className="form__btn-item">
-                <a href="#" className="form__meta-btn print-order">
-                  PRINT ORDER PAGE
-                </a>
-                <a href="#" className="form__meta-btn info-order">
-                  TERMS & CONDITIONS
-                </a>
-              </div>
-              <div className="form__btn-item">
-                <a href="#" className="btn btn_no-bg">
-                  CONTINUE SHOPPING
-                </a>
-                <button type="submit" className="btn checkout-btn">
-                  CHECKOUT
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
+      <Switch>
+        <Route path={`${routeMatch.path}/`} exact>
+        </Route>
+        <Route path={`${routeMatch.path}/step-two`} exact>
+          <FormContact submit={submit} />
+        </Route>
+      </Switch>
     </React.Fragment>
   );
 };
+
 const mapStateToProps = (state) => ({
   basket: getBasket(state),
 });
+
 const mapDispatchToProps = (dispatch) => ({
   handlerDeleteFromBasket: (id) => {
     dispatch(removeProductsFromBasket(id));
   },
 });
-export {Basket};
+export { Basket };
 export default connect(mapStateToProps, mapDispatchToProps)(Basket);
 
 {

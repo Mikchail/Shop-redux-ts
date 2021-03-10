@@ -8,7 +8,7 @@ const Contacts = () => {
   return (
     <React.Fragment>
       <Breadcrumbs />
-      <FormContact />
+      {/* <FormContact /> */}
       <MapGoogle />
       <ContactsList />
     </React.Fragment>

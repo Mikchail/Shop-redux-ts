@@ -15,6 +15,12 @@ type Menu = {
 
 
 
+interface IFormValues {
+  company_name: string;
+  contact_person: string;
+  phone: string;
+  email: string;
+  message: string;
+}
 
-
-export {InnerMenu,Menu}
+export { InnerMenu, Menu, IFormValues }
